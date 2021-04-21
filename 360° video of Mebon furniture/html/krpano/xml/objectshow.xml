@@ -1,0 +1,12 @@
+<krpano version="1.0.8.15" onstart="buildframes(../data/sf/,31,.png,'[p]3d环物[/p]','[p]产品信息介绍[/p]');set(layer[obj_close].visible,false);">
+
+  
+  <contextmenu>
+    <item caption="维构全景(www.vgoyun.com)" onclick="openurl('http://www.vgoyun.com');"/>
+  </contextmenu>
+  
+  <include url="/krpano/xml/object.xml?34143"/>
+
+	
+	
+</krpano>

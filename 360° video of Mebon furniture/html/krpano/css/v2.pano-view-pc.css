@@ -1,0 +1,20 @@
+.qrcode-wrap{width: 80px;height: 80px;position: fixed;right: 10px;top:10px;text-align: center;}
+.qrcode-wrap span{color: #fff;font-size: 12px;height: 24px;line-height: 24px;display: none;}
+
+.author-wrap{position: fixed;top:10px;left: 10px;}
+.author-wrap a{font-size: 15px;color: #fff;margin-bottom: 10px;display: block;}
+
+.comment-wrap{position: fixed;bottom:90px;left: 50%;width: 260px;margin-left: -150px;background: url(../images/bg-black.png) repeat;padding: 5px 15px 0;border-radius: 4px;display: none;z-index: 999999;}
+.comment-wrap .title{color: #fff;font-size: 15px;padding-bottom: 6px;display: block;}
+.comment-wrap .title i{font-size: 18px;}
+.comment-wrap .btn:hover{opacity: .8;}
+.comment-wrap textarea{font-size: 12px;}
+.comment-wrap .btn-default{background: none;border:1px solid #fff;color: #fff;margin-left: 10px;}
+.comment-wrap .btn-primary{background: #439ffa;border:1px solid #439ffa;}
+
+.share-wrap{text-align: center;color: #555;}
+.share-wrap .bottom {padding-top: 12px;}
+.share-wrap .bottom a{display: inline-block;margin:0 10px;}
+.share-wrap .bottom i{display: inline-block;background-image: url(../images/icon-share.png);width: 32px;height: 32px;background-position:  0 0;}
+.share-wrap .qzone i{background-position: -33px 0;}
+.share-wrap .qfriend i{background-position: -66px 0;}
