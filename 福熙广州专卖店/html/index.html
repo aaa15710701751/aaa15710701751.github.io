@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 10]>
+    <html class="ie" lang="zh-CN">
+<!--[else]>
+    <html lang="zh-CN">
+<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <title>720全景</title>
+    <meta name="keywords" content="720度全景,360全景" />
+    <meta name="description" content="专业的720度全景发布分享交流平台，一键拼接、生成、发布，让全景制作更简单。我们专注于虚拟现实、数字视觉和互联网技术的研发和应用，为用户提供优质的VR和数字视觉服务。" />
+
+    <link rel="stylesheet" href="krpano/css/fonts.css">
+    <link rel="stylesheet" href="krpano/css/v2.pano-view-common.css">
+    <link rel="stylesheet" href="krpano/css/v2.pano-view-pc.css">
+    <link rel="stylesheet" href="krpano/fancybox/jquery.fancybox.min.css?r=20170803">
+    <!--<link rel="stylesheet" href="/krpano/css/v2.pano-view-mobile.css">-->
+
+    <script type="text/javascript" src="krpano/js/jquery-1.10.2.min.js"></script>
+    <script>
+        var _config = {
+            app_url: "https://editor.vryou.cn/",
+            static_cdn_url: "/",
+            is_weixin:false,
+            pano_id: "50066",
+            xml: "krpano/data/vtour.xml?1",
+            client: browserRedirect(),
+            hits: "1024",
+            is_like: "0",
+            like_nums: "16",
+            qrcode: "krpano/images/api_qrcode.jpg",
+            remark: '',
+            adlist:[]
+            },
+            _user = {
+                user_id: "-99999",
+                avatar: "",
+                nickname: "",
+                openid: "",
+            },
+
+    
+        _krpano;
+
+        // 检测客户端类型，是phone还是pc
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                return "mobile";
+            } else {
+                return "pc";
+            }
+        }
+    </script>
+
+    <script>
+        function get_hotspot(scene_id) {
+            var hotspotlist = {"120220":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35449,"scene_id":120220,"type_id":6,"hot_name":"奥克兰","icon_id":"g-1-7","ath":79.50,"atv":-13.80,"diy_id":10007,"datastr":"109432","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109432","v":"109432","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35450,"scene_id":120220,"type_id":6,"hot_name":"路易威登","icon_id":"g-1-7","ath":-173.66,"atv":-18.98,"diy_id":10007,"datastr":"109433","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109433","v":"109433","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35470,"scene_id":120220,"type_id":1,"hot_name":"前台","icon_id":"g-1-4","ath":-65.45,"atv":11.19,"diy_id":10004,"datastr":"120222","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-4.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120222","v":"120222","y":"0","url":"krpano/hoticon/g-1-4.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-4.png","user_id":0},{"iswritephone":0,"hot_id":35471,"scene_id":120220,"type_id":1,"hot_name":"接待区1","icon_id":"g-1-1","ath":-27.38,"atv":9.93,"diy_id":10001,"datastr":"120221","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-1.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120221","v":"120221","y":"0","url":"krpano/hoticon/g-1-1.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-1.png","user_id":0},{"iswritephone":0,"hot_id":35472,"scene_id":120220,"type_id":1,"hot_name":"产品区1","icon_id":"g-1-12","ath":14.85,"atv":12.46,"diy_id":10012,"datastr":"120223","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120223","v":"120223","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35479,"scene_id":120220,"type_id":1,"hot_name":"侧门","icon_id":"g-1-3","ath":34.87,"atv":16.38,"diy_id":10003,"datastr":"120230","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-3.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120230","v":"120230","y":"0","url":"krpano/hoticon/g-1-3.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-3.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120221":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35428,"scene_id":120221,"type_id":6,"hot_name":"布鲁克林","icon_id":"g-1-7","ath":-129.31,"atv":-21.65,"diy_id":10007,"datastr":"109420","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109420","v":"109420","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35429,"scene_id":120221,"type_id":6,"hot_name":"福安","icon_id":"g-1-7","ath":147.34,"atv":-7.63,"diy_id":10007,"datastr":"109421","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109421","v":"109421","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35430,"scene_id":120221,"type_id":6,"hot_name":"福禧","icon_id":"g-1-7","ath":168.08,"atv":-9.03,"diy_id":10007,"datastr":"109422","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109422","v":"109422","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35433,"scene_id":120221,"type_id":6,"hot_name":"瑞福","icon_id":"g-1-7","ath":-168.48,"atv":-9.02,"diy_id":10007,"datastr":"109424","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109424","v":"109424","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35434,"scene_id":120221,"type_id":6,"hot_name":"纳福","icon_id":"g-1-7","ath":115.11,"atv":-9.25,"diy_id":10007,"datastr":"109423","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109423","v":"109423","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35435,"scene_id":120221,"type_id":6,"hot_name":"添福","icon_id":"g-1-7","ath":130.33,"atv":-8.30,"diy_id":10007,"datastr":"109425","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109425","v":"109425","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35436,"scene_id":120221,"type_id":6,"hot_name":"中国风","icon_id":"g-1-7","ath":-37.58,"atv":-27.89,"diy_id":10007,"datastr":"109426","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109426","v":"109426","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35457,"scene_id":120221,"type_id":1,"hot_name":"前台","icon_id":"g-1-5","ath":96.27,"atv":10.16,"diy_id":10005,"datastr":"120222","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-5.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120222","v":"120222","y":"0","url":"krpano/hoticon/g-1-5.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-5.png","user_id":0},{"iswritephone":0,"hot_id":35459,"scene_id":120221,"type_id":1,"hot_name":"接待区2","icon_id":"g-1-12","ath":174.59,"atv":24.26,"diy_id":10012,"datastr":"120224","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120224","v":"120224","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35462,"scene_id":120221,"type_id":1,"hot_name":"产品区2","icon_id":"g-1-12","ath":67.73,"atv":13.57,"diy_id":10012,"datastr":"120220","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120220","v":"120220","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35559,"scene_id":120221,"type_id":6,"hot_name":"春风得意","icon_id":"g-1-7","ath":39.53,"atv":-29.59,"diy_id":10007,"datastr":"109435","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109435","v":"109435","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120222":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35426,"scene_id":120222,"type_id":6,"hot_name":"西雅图","icon_id":"g-1-7","ath":-74.78,"atv":-31.15,"diy_id":10007,"datastr":"109418","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109418","v":"109418","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35427,"scene_id":120222,"type_id":6,"hot_name":"新泽西","icon_id":"g-1-7","ath":-38.23,"atv":-21.35,"diy_id":10007,"datastr":"109419","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109419","v":"109419","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35452,"scene_id":120222,"type_id":1,"hot_name":"正门","icon_id":"g-1-1","ath":175.10,"atv":30.00,"diy_id":10001,"datastr":"120225","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-1.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120225","v":"120225","y":"0","url":"krpano/hoticon/g-1-1.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-1.png","user_id":0},{"iswritephone":0,"hot_id":35454,"scene_id":120222,"type_id":1,"hot_name":"产品区2","icon_id":"g-1-5","ath":67.81,"atv":7.05,"diy_id":10005,"datastr":"120220","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-5.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120220","v":"120220","y":"0","url":"krpano/hoticon/g-1-5.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-5.png","user_id":0},{"iswritephone":0,"hot_id":35456,"scene_id":120222,"type_id":1,"hot_name":"接待区1","icon_id":"g-1-4","ath":29.32,"atv":5.57,"diy_id":10004,"datastr":"120221","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-4.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120221","v":"120221","y":"0","url":"krpano/hoticon/g-1-4.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-4.png","user_id":0},{"iswritephone":0,"hot_id":35463,"scene_id":120222,"type_id":1,"hot_name":"产品区1","icon_id":"g-1-12","ath":46.39,"atv":9.28,"diy_id":10012,"datastr":"120223","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120223","v":"120223","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120223":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35444,"scene_id":120223,"type_id":6,"hot_name":"金尊","icon_id":"g-1-7","ath":-169.79,"atv":-16.04,"diy_id":10007,"datastr":"109427","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109427","v":"109427","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35445,"scene_id":120223,"type_id":6,"hot_name":"一品江南","icon_id":"g-1-7","ath":147.20,"atv":-13.17,"diy_id":10007,"datastr":"109428","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109428","v":"109428","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35446,"scene_id":120223,"type_id":6,"hot_name":"金鼎","icon_id":"g-1-7","ath":-126.36,"atv":-24.28,"diy_id":10007,"datastr":"109429","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109429","v":"109429","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35447,"scene_id":120223,"type_id":6,"hot_name":"金碧","icon_id":"g-1-7","ath":-43.88,"atv":-25.28,"diy_id":10007,"datastr":"109430","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109430","v":"109430","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35448,"scene_id":120223,"type_id":6,"hot_name":"芝加哥","icon_id":"g-1-7","ath":2.55,"atv":-19.56,"diy_id":10007,"datastr":"109431","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109431","v":"109431","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35468,"scene_id":120223,"type_id":1,"hot_name":"产品区2","icon_id":"g-1-12","ath":90.60,"atv":13.40,"diy_id":10012,"datastr":"120220","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120220","v":"120220","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35469,"scene_id":120223,"type_id":1,"hot_name":"前台","icon_id":"g-1-5","ath":127.31,"atv":7.82,"diy_id":10005,"datastr":"120222","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-5.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120222","v":"120222","y":"0","url":"krpano/hoticon/g-1-5.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-5.png","user_id":0},{"iswritephone":0,"hot_id":35480,"scene_id":120223,"type_id":1,"hot_name":"侧门","icon_id":"g-1-2","ath":57.68,"atv":22.02,"diy_id":10002,"datastr":"120230","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-2.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120230","v":"120230","y":"0","url":"krpano/hoticon/g-1-2.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-2.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120224":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35437,"scene_id":120224,"type_id":6,"hot_name":"福禧","icon_id":"g-1-7","ath":165.01,"atv":-33.83,"diy_id":10007,"datastr":"109422","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109422","v":"109422","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35438,"scene_id":120224,"type_id":6,"hot_name":"纳福","icon_id":"g-1-7","ath":53.17,"atv":-11.65,"diy_id":10007,"datastr":"109423","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109423","v":"109423","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35439,"scene_id":120224,"type_id":6,"hot_name":"添福","icon_id":"g-1-7","ath":79.57,"atv":-12.15,"diy_id":10007,"datastr":"109425","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109425","v":"109425","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35440,"scene_id":120224,"type_id":6,"hot_name":"福安","icon_id":"g-1-7","ath":109.49,"atv":-19.56,"diy_id":10007,"datastr":"109421","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109421","v":"109421","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35441,"scene_id":120224,"type_id":6,"hot_name":"瑞福","icon_id":"g-1-7","ath":-140.44,"atv":-18.58,"diy_id":10007,"datastr":"109424","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109424","v":"109424","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35442,"scene_id":120224,"type_id":6,"hot_name":"布鲁克林","icon_id":"g-1-7","ath":-80.60,"atv":-15.64,"diy_id":10007,"datastr":"109420","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109420","v":"109420","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35443,"scene_id":120224,"type_id":6,"hot_name":"中国风","icon_id":"g-1-7","ath":-40.12,"atv":-8.47,"diy_id":10007,"datastr":"109426","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109426","v":"109426","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35465,"scene_id":120224,"type_id":1,"hot_name":"产品区2","icon_id":"g-1-12","ath":14.07,"atv":11.16,"diy_id":10012,"datastr":"120220","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120220","v":"120220","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35466,"scene_id":120224,"type_id":1,"hot_name":"接待区1","icon_id":"g-1-12","ath":-21.51,"atv":23.02,"diy_id":10012,"datastr":"120221","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-12.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120221","v":"120221","y":"0","url":"krpano/hoticon/g-1-12.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-12.png","user_id":0},{"iswritephone":0,"hot_id":35467,"scene_id":120224,"type_id":1,"hot_name":"前台","icon_id":"g-1-5","ath":34.47,"atv":8.42,"diy_id":10005,"datastr":"120222","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-5.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120222","v":"120222","y":"0","url":"krpano/hoticon/g-1-5.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-5.png","user_id":0},{"iswritephone":0,"hot_id":35561,"scene_id":120224,"type_id":6,"hot_name":"春风得意","icon_id":"g-1-7","ath":-15.80,"atv":-9.75,"diy_id":10007,"datastr":"109435","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109435","v":"109435","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120225":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35451,"scene_id":120225,"type_id":1,"hot_name":"前台","icon_id":"g-1-1","ath":1.32,"atv":24.10,"diy_id":10001,"datastr":"120222","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-1.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120222","v":"120222","y":"0","url":"krpano/hoticon/g-1-1.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-1.png","user_id":0},{"iswritephone":0,"hot_id":35481,"scene_id":120225,"type_id":1,"hot_name":"侧门","icon_id":"g-1-2","ath":77.72,"atv":10.23,"diy_id":10002,"datastr":"120230","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-2.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120230","v":"120230","y":"0","url":"krpano/hoticon/g-1-2.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-2.png","user_id":0},{"iswritephone":0,"hot_id":35562,"scene_id":120225,"type_id":6,"hot_name":"日出印象","icon_id":"g-1-7","ath":71.20,"atv":-3.41,"diy_id":10007,"datastr":"109436","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109436","v":"109436","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0}],"comment_list":[]},"msg":0,"status":1},"120230":{"data": {"hot_list":[{"iswritephone":0,"hot_id":35477,"scene_id":120230,"type_id":1,"hot_name":"产品区2","icon_id":"g-1-2","ath":-78.37,"atv":22.26,"diy_id":10002,"datastr":"120220","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-2.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120220","v":"120220","y":"0","url":"krpano/hoticon/g-1-2.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-2.png","user_id":0},{"iswritephone":0,"hot_id":35478,"scene_id":120230,"type_id":1,"hot_name":"产品区1","icon_id":"g-1-3","ath":-45.26,"atv":22.15,"diy_id":10003,"datastr":"120223","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-3.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120223","v":"120223","y":"0","url":"krpano/hoticon/g-1-3.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-3.png","user_id":0},{"iswritephone":0,"hot_id":35482,"scene_id":120230,"type_id":1,"hot_name":"正门","icon_id":"g-1-3","ath":-138.41,"atv":12.84,"diy_id":10003,"datastr":"120225","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-3.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"120225","v":"120225","y":"0","url":"krpano/hoticon/g-1-3.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-3.png","user_id":0},{"iswritephone":0,"hot_id":35563,"scene_id":120230,"type_id":6,"hot_name":"吉星高照","icon_id":"g-1-7","ath":-125.39,"atv":-4.77,"diy_id":10007,"datastr":"109437","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109437","v":"109437","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0},{"iswritephone":0,"hot_id":35566,"scene_id":120230,"type_id":6,"hot_name":"堪萨斯","icon_id":"g-1-7","ath":-3.18,"atv":-5.73,"diy_id":10007,"datastr":"109438","abank":0,"plugname":"","linkurl":"","price":"","isstatic":0,"pointlist":null,"diy_src":"krpano/hoticon/g-1-7.png","scale":"0.50","scaleapp":"0.30","style":"hotspotstyle_24gif","data_id":"109438","v":"109438","y":"0","url":"krpano/hoticon/g-1-7.png","crop":"0|0|128|128","diydata":null,"diytype":0,"thumb":"krpano/hoticon/c-g-1-7.png","user_id":0}],"comment_list":[]},"msg":0,"status":1}};
+
+            return hotspotlist[scene_id];
+        }
+
+        function get_matbyid(mat_id) {
+            var matlist = {"109418":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109418,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"西雅图","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030787342.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583572841073)\/","straddtime":"2020-03-07 17:20","type_text":"图文信息"}},"109419":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109419,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"新泽西","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030757478.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573051287)\/","straddtime":"2020-03-07 17:24","type_text":"图文信息"}},"109420":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109420,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"布鲁克林","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030752313.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573152833)\/","straddtime":"2020-03-07 17:25","type_text":"图文信息"}},"109421":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109421,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"福安","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030764841.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573233877)\/","straddtime":"2020-03-07 17:27","type_text":"图文信息"}},"109422":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109422,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"福禧","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030718213.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573291337)\/","straddtime":"2020-03-07 17:28","type_text":"图文信息"}},"109423":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109423,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"纳福","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030778572.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573355947)\/","straddtime":"2020-03-07 17:29","type_text":"图文信息"}},"109424":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109424,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"瑞福","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030742141.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573385120)\/","straddtime":"2020-03-07 17:29","type_text":"图文信息"}},"109425":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109425,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"添福","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030757442.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573424290)\/","straddtime":"2020-03-07 17:30","type_text":"图文信息"}},"109426":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109426,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"中国风","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030711458.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573472090)\/","straddtime":"2020-03-07 17:31","type_text":"图文信息"}},"109427":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109427,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"金尊","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030726132.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573774983)\/","straddtime":"2020-03-07 17:36","type_text":"图文信息"}},"109428":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109428,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"一品江南","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030777125.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573796523)\/","straddtime":"2020-03-07 17:36","type_text":"图文信息"}},"109429":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109429,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"金鼎","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030737667.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573850187)\/","straddtime":"2020-03-07 17:37","type_text":"图文信息"}},"109430":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109430,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"金碧","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030736726.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573887150)\/","straddtime":"2020-03-07 17:38","type_text":"图文信息"}},"109431":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109431,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"芝加哥","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030773867.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573919080)\/","straddtime":"2020-03-07 17:38","type_text":"图文信息"}},"109432":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109432,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"奥克兰","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030764514.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573953110)\/","straddtime":"2020-03-07 17:39","type_text":"图文信息"}},"109433":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109433,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"路易威登","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030774375.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583573976173)\/","straddtime":"2020-03-07 17:39","type_text":"图文信息"}},"109435":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109435,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"春风得意","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030956872.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583720918433)\/","straddtime":"2020-03-09 10:28","type_text":"图文信息"}},"109436":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109436,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"日出印象","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030943813.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583720999120)\/","straddtime":"2020-03-09 10:29","type_text":"图文信息"}},"109437":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109437,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"吉星高照","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030966344.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583721035870)\/","straddtime":"2020-03-09 10:30","type_text":"图文信息"}},"109438":{"status":1,"matinfo":{"mat3d_list":[],"mat_id":109438,"user_id":11784,"type_id":6,"mat_file":"","mat_pic":"","title":"堪萨斯 ","contents":"\u003cp\u003e\u003cimg src=\"https://editor.vryou.cn/krpano/data/11784/edit/2020030984631.jpg\"\u003e\u003c/p\u003e","isadd":0,"add1":"","add2":"","addtime":"\/Date(1583721085703)\/","straddtime":"2020-03-09 10:31","type_text":"图文信息"}}};
+
+            return matlist[mat_id];
+        }
+
+        function get_nav(pano_id) {
+            return {"navlist":[]};
+        }
+
+        function getnavmenu() {
+            return {"menulist":[]};
+        }
+        var voicejson = [];
+    </script>
+</head>
+
+<body class="">
+    <div class="pano-page">
+        <div id="pano-view" class="pano"></div>
+    </div>
+
+    <!--<% if (isweixin == "true" && string.IsNullOrWhiteSpace(wx_openid) && string.IsNullOrWhiteSpace(wx_nickname))
+    { %>
+    <div class="comment-wrap">
+        <span class="title"><i class="iconfont">&#xe62b;</i> 说一说</span>
+
+        <div class="form-group">
+            <textarea rowspan="2" id="comment-text" placeholder="微信授权后便可以发表说一说啦~" class="form-control"></textarea>
+        </div>
+        <div class="form-group text-right">
+            <a class="btn btn-sm btn-primary" id="wx-login" href="javascript:;">授 权</a>
+            <a class="btn btn-sm btn-default" href="javascript:hideCommentFormPano();">取消</a>
+        </div>
+
+    </div>
+
+
+    <%}
+    else
+    { %>-->
+    <a id="returnhome" style="display: none; position:absolute;left:48%;top:20px;color: #c1c0c0;background-color: rgba(6, 6, 6, 0.5);padding: 5px 10px;font-size: 14px;">返回主页</a>
+    <header class="masthead" style="display: none;">
+        <div class="container">
+            <nav class="nav-user">
+                <ul class="primary"></ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="comment-wrap">
+        <span class="title"><i class="iconfont">&#xe62b;</i> 说一说</span>
+        <form id="comment-form" action="javascript:;">
+            <div class="form-group">
+                <textarea rowspan="2" id="content" placeholder="说点什么吧~" class="form-control"></textarea>
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="btn btn-sm btn-primary">写好了</button>
+                <button onclick="hideCommentFormPano();" type="button" class="btn btn-sm btn-default">取消</button>
+            </div>
+        </form>
+    </div>
+    <!--<%} %>-->
+    <div id="share-hide" class="hidden">
+        <div class="share-wrap">
+            <div class="qrcode">
+                <img width="200" src="krpano/images/api_qrcode.jpg">
+                <p>微信"扫一扫"分享</p>
+            </div>
+            <div class="bottom">
+                <a class="weibo" title="分享到微博" href="http://www.jiathis.com/send/?webid=tsina&url=" target="_blank">
+                    <i></i>
+                </a>
+                <a class="qzone" title="分享到QQ空间" href="http://www.jiathis.com/send/?webid=qzone&url=" target="_blank">
+                    <i></i>
+                </a>
+                <a class="qfriend" title="分享给QQ好友" href="http://www.jiathis.com/send/?webid=cqq&url=" target="_blank">
+                    <i></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="image-preview" style="display:none;">
+        <div class="close" id="closeimageview">×</div>
+        <div class="tab-group">
+    
+        </div>
+        <div class="img-wrap">
+            <img id="imagepreview" src="" style="display:none;"/>
+            <div id="imageprvdiv"></div>
+            <span class="btn btn-prev" id="previmageview">&lt;</span>
+            <span class="btn btn-next" id="nextvimageview">&gt;</span>
+        </div>
+
+    </div>
+    <style>
+        .image-preview{position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, .5); z-index: 4000;}
+        .image-preview .close {position: absolute; right: 10px; top: 10px;z-index: 101;}
+        .image-preview .close:hover{color: #ff6a00;}
+        .image-preview .img-wrap {position: absolute; top: 55%; left: 0; transform: translateY(-50%); width: 100%; text-align: center;}
+        .image-preview .img-wrap .btn{position: absolute; top: 50%;transform: translateY(-50%); }
+        .image-preview .img-wrap .btn-prev{left: 10px}
+        .image-preview .img-wrap .btn-next{right: 10px}
+        .image-preview .img-wrap .btn:hover{color: #ff6a00;}
+        .image-preview .tab-group {position: absolute;padding: 10px 0; text-align: center;top: 90px; left: 0; transform: translateY(-50%); width: 100%;z-index:100;}
+        .image-preview .tab-group > span{display: inline-block; height: 30px; line-height: 30px; border: 1px solid #fff; background: rgba(0, 0, 0, .2); border-radius: 4px; text-align: center; font-size: 14px; color: #fff; cursor: pointer;     margin-left: 20px; padding: 0 20px;}
+        .image-preview .tab-group > span:hover, .image-preview .tab-group > span.active {color: #fff; background-color: #ff6a00;}
+        .image-preview .img-wrap .btn, .image-preview .close {
+            width: 50px; height: 50px; line-height: 50px; border-radius: 50%; background-color: rgba(0, 0, 0, .5); text-align: center; font-size: 30px; color: #fff; cursor: pointer;
+        }
+    </style>
+     <script type="text/javascript">
+        var imageviewList = [];
+        var imageviewtitleList = [];
+        var imageviewArray = [];
+        var imageviewindex = 0;
+        var isviewprv = "img";
+        $("#closeimageview").click(function(){
+            $('#imageprvdiv').html('');
+            $('.image-preview').hide()
+        })
+       
+        $("#previmageview").click(function(){
+           
+            if(imageviewindex > 0) imageviewindex--;
+           
+                $('#imagepreview').attr("src",imageviewArray[imageviewindex]);
+           
+        })
+
+        $("#nextvimageview").click(function(){
+
+            if(imageviewindex < imageviewArray.length-1) imageviewindex++;
+           
+                $('#imagepreview').attr("src",imageviewArray[imageviewindex]);
+           
+        })
+        
+        function imagetabclick(index){
+         
+            imageviewArray = [];
+            imageviewindex = 0;
+            var arr = imageviewList[index].split('|');
+            for (var k = 0; k < arr.length; k++) {
+                if (arr[k].length > 1) {
+                    imageviewArray.push(_config.app_url + arr[k])
+                }
+            }
+
+            $('#imageprvdiv').html('');
+            if(isviewprv == "img"){
+                $("#nextvimageview").show();
+                $("#previmageview").show();
+                $('#imagepreview').attr("src",imageviewArray[imageviewindex]);
+
+                $('#imagepreview').attr("height",(window.innerHeight-160)+"px")
+                console.log(window.innerHeight)
+            }
+            else{
+                $("#nextvimageview").hide();
+                $("#previmageview").hide();;
+                $('#imageprvdiv').html('<video  id="videopreview" controls="controls" autoplay="autoplay"><source id="videopreviewsrc" type="video/mp4" src="'+imageviewArray[imageviewindex]+'"></source>您的浏览器不支持HTML5播放视频</video>');
+            }
+
+            var imageprvtitle = $('.tab-group');
+            imageprvtitle.html('');
+            
+            for (k = 0; k < imageviewtitleList.length; k++) {
+                //if(k == 0)
+                //    imageprvtitle.append('<span class="active" onclick="imagetabclick('+k+')">' + imageviewtitleList[k] + '</span>');
+                //else
+                    imageprvtitle.append('<span onclick="imagetabclick(' + k + ')">' + imageviewtitleList[k] + '</span>');
+            }
+            var item = $(imageprvtitle).find('span')
+            $(item[index]).addClass('active').siblings().removeClass('active')
+            console.log(item)
+        }
+        //************
+         </script>
+    <!---------------------------------------------------->
+
+    <link rel="stylesheet" href="krpano/js/select/select.css">
+
+    <div class="voice-map">
+        <div class="mask"></div>
+        <div class="container">
+            <a href="javascript:;" class="close">×</a>
+            <div class="content">
+                <div class="field clearfix">
+                    <label class="label fl">起点</label>
+                    <div class="text fl clearfix">
+                        <select id="drp_voice_start">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="field clearfix">
+                    <label class="label fl">终点</label>
+                    <div class="text fl">
+                        <select id="drp_voice_end">
+                            <option value="0">请选择终点</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="field clearfix">
+                    <div class="search-btn" id="searchBtn">搜索</div>
+                </div>
+            </div>
+            <div class="search-result">
+                <div class="voice-box">
+                    <div class="voice-text">
+                        <span id="voicetxt1">1号楼</span>&nbsp;到&nbsp;<span id="voicetxt2">2号楼</span>
+                    </div>
+                    <div class="voice-btn"><span id="playVoice">语音导航</span><span id="reSearch">重新导航</span></div>
+                </div>
+                <div class="img-box">
+                    <a id="a_result_img" data-fancybox="gallery" href="">
+                        <img id="search_result_img" src="" alt="导航地图">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------>
+    <div class="art-map" style="display: none;">
+        <div class="mask"></div>
+        <div class="container">
+            <a href="javascript:;" class="close">×</a>
+
+            <div class="search-artresult">
+                <div class="img-box" id="mapWrap">
+                    <img src="http://editor.vgoyun.com/krpano/data/10002/1/2017121953544.jpg" style="width: 100%" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!------------>
+
+    <script type="text/javascript" src="krpano/js/bootstrap.3.3.5.min.js"></script>
+    <script type="text/javascript" src="krpano/js/v2.pano-view-plugin.js"></script>
+    <script type="text/javascript" src="krpano/js/tour.js?110"></script>
+    <script type="text/javascript" src="krpano/js/krpano.js?r=147617032"></script>
+    <script type="text/javascript" src="krpano/js/view.js?r=147617032"></script>
+    <script type="text/javascript" src="krpano/fancybox/jquery.fancybox.min.js?r=20170803"></script>
+    <script type="text/javascript" src="krpano/edit/layer/layer.js?r=20170803"></script>
+    <script>
+        var $content = $('.content')
+        var $mapBox = $('.search-result')
+
+
+        var voiceobj;
+        function getvoice(s, e){
+            for(var o in voicejson){
+                if(voicejson[o].start_mapposition_id == s && voicejson[o].end_mapposition_id == e)
+                    return voicejson[o];
+            }
+            return null;
+        }
+        $(function() {
+            $('select').searchableSelect();
+            $(".voice-box").hide();
+            $("#search_result_img").hide();
+        })
+
+
+
+        var searchmusicname = "";
+        $('#playVoice').on('click', function() {
+            if(voiceobj && voiceobj.voiceurl.length >0){
+                _krpano.call("stopsound(bgmusic);");
+                if(searchmusicname !="")
+                    _krpano.call("stopsound(/" +  searchmusicname + ");");
+
+                _krpano.call("playsound(/" + voiceobj.voiceurl + ",/" + voiceobj.voiceurl + ",1, js(playviewmusic()));");
+                searchmusicname = voiceobj.voiceurl;
+            }
+        })
+
+        $('#searchBtn').on('click', function() {
+
+            var start = $("#drp_voice_start").val();
+            if (start == 0) {
+                layer.msg("请选择起点");
+                return;
+            }
+            var end = $("#drp_voice_end").val();
+            if (end == 0) {
+                layer.msg("请选择终点");
+                return;
+            }
+
+            if (start == end) {
+                layer.msg("起点和终点不能相同");
+                return;
+            }
+
+            voiceobj = getvoice(start, end);
+
+            if(voiceobj == null){
+                layer.msg("查不到路线指引");
+                return;
+            }
+
+            $("#search_result_img").attr("src", "/" + voiceobj.pic);
+            $("#a_result_img").attr("href", "/" + voiceobj.pic);
+
+            $(".voice-box").show();
+            $("#search_result_img").show();
+
+            var stxt = $("#drp_voice_start").find("option:selected").text();
+            var etxt = $("#drp_voice_end").find("option:selected").text();
+            $("#voicetxt1").html(stxt);
+            $("#voicetxt2").html(etxt);
+
+            $content.slideUp('500')
+            $mapBox.show()
+
+        })
+
+        $('#reSearch').on('click', function() {
+            $content.slideDown('500')
+            $mapBox.hide()
+        })
+        $('.close').on('click', function () {
+            $('.voice-map').hide()
+            $('.art-map').hide()
+            //if(searchmusicname !="")
+            //    _krpano.call("stopsound(" +  searchmusicname + ");"); 
+        })
+
+        function voicesearch() {
+            $('.voice-map').show()
+        }
+
+        function artsearch() {
+            $('.art-map').show()
+            mapPointFactor()
+        }
+
+        var pointNum = 0
+        var objectPoolFactory = function (createObjFn) {
+            var objectPool = []
+
+            return {
+                create: function () {
+                    var obj = objectPool.length === 0 ? createObjFn.apply(this, arguments) : objectPool.shift()
+
+                    return obj
+                },
+                recover: function (obj) {
+                    objectPool.push(obj)
+                }
+            }
+        }
+
+        var pointFactory = objectPoolFactory(function (where, x, y, name) {
+            var point = document.createElement('div')
+            pointNum++
+            point.className = 'point'
+            point.id = 'point' + pointNum
+            point.style.left = x + 'px'
+            point.style.top = y + 'px'
+            point.name = name;
+            where.appendChild(point)
+
+            point.onload = function () {
+                point.onload = null
+                pointFactory.recover(point)
+            }
+            return point
+        })
+
+        function mapPointFactor() {
+            var mapWrap = document.querySelector('#mapWrap')
+
+            var mapArr = [
+              { x: 260, y: 230, name: "scene_108846" },
+              { x: 330, y: 360, name: "scene_108848" },
+              { x: 320, y: 440, name: "scene_108850" },
+              { x: 680, y: 250, name: "scene_108852" },
+            ]
+
+            mapArr.forEach(function (el) {
+                pointFactory.create(mapWrap, el.x, el.y, el.name)
+            })
+
+            var mapPoint = document.querySelectorAll('.point')
+
+            for (var i = 0; i < mapPoint.length; i++) {
+                mapPoint[i].addEventListener('click', mapHandle, false)
+            }
+
+            function mapHandle() {
+                $('.voice-map').hide()
+                $('.art-map').hide()
+                _krpano.call("skin_loadscene(get(scene[" + this.name + "].name));");
+            }
+        }
+        </script>
+    <script src="krpano/js/select/searchableSelect.js"></script>
+
+
+
+</body>
+</html>

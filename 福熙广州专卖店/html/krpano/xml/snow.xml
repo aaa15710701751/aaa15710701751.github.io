@@ -1,0 +1,36 @@
+<krpano>
+  <!--<plugin name="snow" zorder="1" url="../plugins/snow.swf" alturl="../plugins/snow.js" floor="0.7" keep="true" alpha="0.0"/>
+  <action name="showsnow0">
+    set(plugin[snow].visible, false);set(plugin[snow].alpha, 0.0);
+  </action>
+  <action name="showsnow1">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].keep, true); set(plugin[snow].mode, snow); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 4000); set(plugin[snow].color, 0xFFFFFF); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 4.0); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow2">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/snowball.png'); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 2000); set(plugin[snow].imagescale, 0.5); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 2.0); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow3">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/snowflake.png'); set(plugin[snow].blendmode, add); set(plugin[snow].flakes, 2000); set(plugin[snow].imagescale, 0.4); set(plugin[snow].speed, 0.5); set(plugin[snow].shake, 8.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 2.0); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow4">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/silverstar.png'); set(plugin[snow].blendmode, add); set(plugin[snow].flakes, 2000); set(plugin[snow].imagescale, 0.3); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 2.0); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow5">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/star.png'); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 1000); set(plugin[snow].imagescale, 1.0); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 1.9); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow6">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/heart.png'); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 250); set(plugin[snow].imagescale, 0.5); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 1.5); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow7">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/smiley.png'); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 1000); set(plugin[snow].imagescale, 1.0); set(plugin[snow].speed, 1.0); set(plugin[snow].shake, 4.0); set(plugin[snow].speedvariance, 2.0); set(plugin[snow].spreading, 1.5); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow8">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, image); set(plugin[snow].imageurl, '../images/snow/money.png'); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 500); set(plugin[snow].imagescale, 0.8); set(plugin[snow].speed, 0.8); set(plugin[snow].shake, 8.0); set(plugin[snow].speedvariance, 3.0); set(plugin[snow].spreading, 2.5); set(plugin[snow].wind, 0.0);
+  </action>
+  <action name="showsnow9">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, rain); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 1500); set(plugin[snow].color, 0x7FAFFF); set(plugin[snow].speed, 3.5); set(plugin[snow].shake, 1.0); set(plugin[snow].speedvariance, 1.0); set(plugin[snow].spreading, 3.0); set(plugin[snow].rainwidth, 1.0); set(plugin[snow].rainalpha, 0.5); set(plugin[snow].wind, 2.0);
+  </action>
+  <action name="showsnow10">
+    set(plugin[snow].visible, true);set(plugin[snow].alpha, 1.0);set(plugin[snow].mode, rain); set(plugin[snow].blendmode, normal); set(plugin[snow].flakes, 2500); set(plugin[snow].color, 0x9FAFFF); set(plugin[snow].speed, 5.1); set(plugin[snow].shake, 0.0); set(plugin[snow].speedvariance, 1.5); set(plugin[snow].spreading, 4.0); set(plugin[snow].rainwidth, 1.5); set(plugin[snow].rainalpha, 0.3); set(plugin[snow].wind, 3.0);
+  </action>-->
+</krpano>
