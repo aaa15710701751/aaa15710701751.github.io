@@ -1,0 +1,702 @@
+<krpano onstart="startup();" logkey="false" showerrors="false">
+  <include url="../../krpano/xml/snow.xml?003" />
+  <lensflares name="obj">
+  </lensflares>
+  <action name="startup">if(startscene === null, copy(startscene,scene[0].name));loadscene(get(startscene), null, MERGE);set(currscene,get(startscene));if(autorotate.enabled,bombtimer(0));ac_littleplanetintro();</action>
+  <bottom_menu name="area_menu">
+  </bottom_menu>
+  <area_menu name="bottom_menu">
+  </area_menu>
+  <maps name="maps">
+  </maps>
+  <scene album="航拍" group="0" name="scene_124758" title="全局航拍" thumburl="../../krpano/data/11784/53137/22624/thumb.jpg" showthumburl="../../krpano/data/11784/53137/22624/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="117" vlookat="10.49" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="-83.27">
+    <view hlookat="-83.27" vlookat="10.49" fovtype="MFOV" fov="117" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/22624/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/22624/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/22624/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/22624/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/22624/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="景点" group="1" name="scene_124766" title="古兜财神桥" thumburl="../../krpano/data/11784/53137/22158/thumb.jpg" showthumburl="../../krpano/data/11784/53137/22158/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/22158/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/22158/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/22158/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/22158/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/22158/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="1" name="scene_124756" title="财神缆车" thumburl="../../krpano/data/11784/53137/66381/thumb.jpg" showthumburl="../../krpano/data/11784/53137/66381/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/66381/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/66381/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/66381/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/66381/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/66381/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="1" name="scene_124770" title="财神山" thumburl="../../krpano/data/11784/53137/82526/thumb.jpg" showthumburl="../../krpano/data/11784/53137/82526/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/82526/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/82526/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/82526/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/82526/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/82526/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="1" name="scene_124773" title="山泉水世界" thumburl="../../krpano/data/11784/53137/78767/thumb.jpg" showthumburl="../../krpano/data/11784/53137/78767/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/78767/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/78767/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/78767/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/78767/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/78767/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="1" name="scene_124774" title="东方红水库" thumburl="../../krpano/data/11784/53137/38472/thumb.jpg" showthumburl="../../krpano/data/11784/53137/38472/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/38472/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/38472/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/38472/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/38472/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/38472/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="温泉谷" group="2" name="scene_124743" title="温泉谷正门" thumburl="../../krpano/data/11784/53137/65525/thumb.jpg" showthumburl="../../krpano/data/11784/53137/65525/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="-6.76" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="1.03">
+    <view hlookat="1.03" vlookat="-6.76" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/65525/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/65525/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/65525/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/65525/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/65525/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="2" name="scene_124741" title="温泉谷泳池" thumburl="../../krpano/data/11784/53137/22764/thumb.jpg" showthumburl="../../krpano/data/11784/53137/22764/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="5.52" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="1.54">
+    <view hlookat="1.54" vlookat="5.52" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/22764/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/22764/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/22764/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/22764/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/22764/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="2" name="scene_124771" title="人参汤温泉池" thumburl="../../krpano/data/11784/53137/34576/thumb.jpg" showthumburl="../../krpano/data/11784/53137/34576/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/34576/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/34576/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/34576/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/34576/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/34576/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="2" name="scene_124772" title="陈皮汤温泉池" thumburl="../../krpano/data/11784/53137/64377/thumb.jpg" showthumburl="../../krpano/data/11784/53137/64377/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/64377/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/64377/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/64377/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/64377/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/64377/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="酒店" group="3" name="scene_124767" title="月泉湖居酒店" thumburl="../../krpano/data/11784/53137/85255/thumb.jpg" showthumburl="../../krpano/data/11784/53137/85255/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/85255/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/85255/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/85255/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/85255/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/85255/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="3" name="scene_124768" title="亚洲福永酒店" thumburl="../../krpano/data/11784/53137/76838/thumb.jpg" showthumburl="../../krpano/data/11784/53137/76838/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/76838/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/76838/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/76838/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/76838/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/76838/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="3" name="scene_124769" title="古兜皇家SPA酒店" thumburl="../../krpano/data/11784/53137/27664/thumb.jpg" showthumburl="../../krpano/data/11784/53137/27664/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="0" fovmin="40.00" fovmax="140.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="140.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/27664/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/27664/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/27664/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/27664/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/27664/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="40㎡公寓样板间" group="4" name="scene_124737" title="厨房" thumburl="../../krpano/data/11784/53137/81058/thumb.jpg" showthumburl="../../krpano/data/11784/53137/81058/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/81058/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/81058/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/81058/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/81058/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/81058/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="4" name="scene_124742" title="卧室" thumburl="../../krpano/data/11784/53137/87864/thumb.jpg" showthumburl="../../krpano/data/11784/53137/87864/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/87864/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/87864/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/87864/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/87864/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/87864/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="4" name="scene_124734" title="卫生间" thumburl="../../krpano/data/11784/53137/84824/thumb.jpg" showthumburl="../../krpano/data/11784/53137/84824/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="2.37">
+    <view hlookat="2.37" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/84824/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/84824/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/84824/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/84824/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/84824/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="56㎡公寓样板间" group="5" name="scene_124740" title="厨房" thumburl="../../krpano/data/11784/53137/12188/thumb.jpg" showthumburl="../../krpano/data/11784/53137/12188/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/12188/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/12188/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/12188/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/12188/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/12188/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="5" name="scene_124748" title="卧室" thumburl="../../krpano/data/11784/53137/28122/thumb.jpg" showthumburl="../../krpano/data/11784/53137/28122/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/28122/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/28122/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/28122/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/28122/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/28122/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="5" name="scene_124728" title="阳台" thumburl="../../krpano/data/11784/53137/50934/thumb.jpg" showthumburl="../../krpano/data/11784/53137/50934/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/50934/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/50934/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/50934/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/50934/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/50934/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="5" name="scene_124736" title="卫生间" thumburl="../../krpano/data/11784/53137/80579/thumb.jpg" showthumburl="../../krpano/data/11784/53137/80579/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="-38.27">
+    <view hlookat="-38.27" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/80579/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/80579/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/80579/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/80579/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/80579/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="60㎡公寓样板间" group="6" name="scene_124732" title="厨房" thumburl="../../krpano/data/11784/53137/73617/thumb.jpg" showthumburl="../../krpano/data/11784/53137/73617/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/73617/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/73617/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/73617/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/73617/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/73617/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="6" name="scene_124744" title="客厅" thumburl="../../krpano/data/11784/53137/40729/thumb.jpg" showthumburl="../../krpano/data/11784/53137/40729/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/40729/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/40729/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/40729/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/40729/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/40729/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="6" name="scene_124739" title="卧室" thumburl="../../krpano/data/11784/53137/41390/thumb.jpg" showthumburl="../../krpano/data/11784/53137/41390/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/41390/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/41390/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/41390/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/41390/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/41390/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="6" name="scene_124747" title="阳台" thumburl="../../krpano/data/11784/53137/34099/thumb.jpg" showthumburl="../../krpano/data/11784/53137/34099/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/34099/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/34099/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/34099/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/34099/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/34099/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="6" name="scene_124730" title="卫生间" thumburl="../../krpano/data/11784/53137/73522/thumb.jpg" showthumburl="../../krpano/data/11784/53137/73522/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/73522/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/73522/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/73522/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/73522/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/73522/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene album="75㎡公寓样板间" group="7" name="scene_124738" title="厨房" thumburl="../../krpano/data/11784/53137/97503/thumb.jpg" showthumburl="../../krpano/data/11784/53137/97503/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/97503/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/97503/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/97503/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/97503/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/97503/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="7" name="scene_124759" title="客厅" thumburl="../../krpano/data/11784/53137/36551/thumb.jpg" showthumburl="../../krpano/data/11784/53137/36551/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/36551/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/36551/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/36551/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/36551/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/36551/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="7" name="scene_124729" title="卧室" thumburl="../../krpano/data/11784/53137/51309/thumb.jpg" showthumburl="../../krpano/data/11784/53137/51309/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/51309/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/51309/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/51309/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/51309/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/51309/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="7" name="scene_124731" title="儿童房" thumburl="../../krpano/data/11784/53137/34109/thumb.jpg" showthumburl="../../krpano/data/11784/53137/34109/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/34109/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/34109/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/34109/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/34109/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/34109/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <scene group="7" name="scene_124733" title="卫生间" thumburl="../../krpano/data/11784/53137/82482/thumb.jpg" showthumburl="../../krpano/data/11784/53137/82482/thumb.jpg" heading="heading" remark="" mapid="N/A" isball="0" bgsnow="0" fov="100" vlookat="10" fovmin="40.00" fovmax="117.00" vlookatmin="-90" vlookatmax="90" compassrotate="180" hlookat="0">
+    <view hlookat="0" vlookat="10" fovtype="MFOV" fov="100" fovmin="40.00" fovmax="117.00" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+    <preview url="../../krpano/data/11784/53137/82482/preview.jpg" />
+    <image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+      <level tiledimagewidth="2816" tiledimageheight="2816">
+        <cube url="../../krpano/data/11784/53137/82482/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1920" tiledimageheight="1920">
+        <cube url="../../krpano/data/11784/53137/82482/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1024" tiledimageheight="1024">
+        <cube url="../../krpano/data/11784/53137/82482/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+    </image>
+    <image if="webvr.isenabled">
+      <cube url="../../krpano/data/11784/53137/82482/vr/pano_%s.jpg" />
+    </image>
+  </scene>
+  <config start_img="" scroll_text="" pano_remark="" wx_share_title="古兜温泉小镇丨720° VR全景视野,在家也能选好房!" wx_share_remark="湾区温泉入户资产，高清实景， 一目了然" wx_friend_icon="https://editor.vryou.cn/krpano/data/11784/10001/s_2020122327778.jpg" logo="/krpano/images/logo.png" pc_bg_music="1" mobile_bg_music="1" bg_music_src="krpano/data/11784/8/2020082844671.mp3" scene_effect="1" group="true" scene_change_type="BLEND(1.0, easeInCubic)" auto_scene_time="60" pc_auto_scene="0" auto_mobile_gyro="0" init_scene_anime="1" mobile_auto_scene="0" auto_rotate="1" auto_rotate_speed="3" show_scene_thumb="1" show_comment="0" show_hit_like="0" loading_text="加载中..." bg_music_name="krpano/data/11784/8/2020082844671.mp3" show_gravity_btn="0" theme_id="1" is_vip="1" show_nickname="0" nickname="圣浪室内建筑摄影" nickname_url="http://www.vryou.cn/author.aspx?id=11784" hits="221" like_nums="0" is_like="0" app_url="http://www.vryou.cn/" static_cdn_url="" logo_width="200" logo_height="64.7887323943662" limitfov="117" logo_url="http://www.vryou.cn/" is_ds="2" viewtype_show="0" map_top="1" menustyle="0" templatetype="0" iscompass="false" />
+  <action name="do_crop_animation">
+    <!-- add attributes to the hotspot -->
+    registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+    registerattribute(yframes, calc((imageheight / %2) BOR 0));
+    registerattribute(frames, calc(xframes * yframes));
+    registerattribute(frame, 0);
+
+    set(crop, '0|0|%1|%2');
+
+    setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+      if(loaded,
+          inc(frame);
+          if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0);clearinterval(calc('crop_anim_' + name)); );
+          mod(xpos, frame, xframes);
+          div(ypos, frame, xframes);
+          Math.floor(ypos);
+          mul(xpos, %1);
+          mul(ypos, %2);
+          calc(crop, xpos + '|' + ypos + '|%1|%2');
+
+          set(hotspot[%5].ath,get(hotspot[%4].ath));
+          set(hotspot[%5].atv,get(hotspot[%4].atv));
+
+        ,
+          clearinterval(calc('crop_anim_' + name));
+        );
+    );
+  </action>
+  <style name="scroll_text_style1" css="text-align:center;font-family:黑体; font-size:13px; color:#00ff00;letter-spacing:2px;" url="../plugins/textfield.swf" align="right" autowidth="true" autoheight="auto" />
+  <layer name="skin_scroll_text1" handcursor="false" scrolled="false" type="container" y="24" align="top" width="100%" height="22" bgcolor="0x000000" bgalpha="0.2" visible="false" keep="true">
+    <layer visible="false" name="skin_scroll_text_cont1" handcursor="false" style="scroll_text_style1" backgroundalpha="0.0" x="0" y="0" html="" />
+  </layer>
+  <style name="scroll_text_style2" css="text-align:center;font-family:黑体; font-size:13px; color:#ffea00;letter-spacing:2px;" url="../plugins/textfield.swf" align="right" autowidth="true" autoheight="auto" />
+  <layer name="skin_scroll_text2" handcursor="false" scrolled="false" type="container" y="210" align="bottom" width="100%" height="22" bgcolor="0x000000" bgalpha="0.2" visible="false" keep="true">
+    <layer visible="false" name="skin_scroll_text_cont2" handcursor="false" style="scroll_text_style2" backgroundalpha="0.0" x="0" y="0" html="" />
+  </layer>
+  <include url="../xml/viewskin.xml?640525" />
+  <include url="../xml/skin1_new.xml?743125" />
+  <include url="../xml/object.xml?643125" />
+  <include url="../xml/shop.xml?643125" />
+  <include url="../xml/objectshop.xml?643125" />
+  <action name="skin_init_adleft">
+
+    set(layer[skin_scroll_text1].visible,true);
+    set(layer[skin_scroll_text_cont1].html,%1);
+    set(layer[skin_scroll_text_cont1].onclick,openurl(%2,'_blank'));
+    skin_scrolltext1();
+  </action>
+  <action name="skin_scrolltext1">
+    
+    if(layer[skin_scroll_text1].scrolled == true
+    ,
+        txtadd(scrolltextwidth,"-","get(layer[skin_scroll_text_cont1].width)");
+        inc(layer[skin_scroll_text_cont1].x,1,get(stagewidth),get(scrolltextwidth));
+        delayedcall(0.01, skin_scrolltext1(););
+    ,
+        set(layer[skin_scroll_text1].scrolled,true);
+        set(layer[skin_scroll_text_cont1].x,get(stagewidth));
+        set(layer[skin_scroll_text_cont1].visible,true);
+        skin_scrolltext1();
+    );
+
+  </action>
+  <action name="skin_init_adright">
+
+    set(layer[skin_scroll_text2].visible,true);
+    set(layer[skin_scroll_text_cont2].html,%1);
+    set(layer[skin_scroll_text_cont2].onclick,openurl(%2,'_blank'));
+    skin_scrolltext2();
+  </action>
+  <action name="skin_scrolltext2">
+
+    if(layer[skin_scroll_text2].scrolled == true
+    ,
+    txtadd(scrolltextwidth,"-","get(layer[skin_scroll_text_cont2].width)");
+    inc(layer[skin_scroll_text_cont2].x,1,get(stagewidth),get(scrolltextwidth));
+    delayedcall(0.01, skin_scrolltext2(););
+    ,
+    set(layer[skin_scroll_text2].scrolled,true);
+    set(layer[skin_scroll_text_cont2].x,get(stagewidth));
+    set(layer[skin_scroll_text_cont2].visible,true);
+    skin_scrolltext2();
+    );
+
+  </action>
+  <layer align="bottomcenter" keep="true" visible="false" type="image" name="nav_play" url="../images/skin1/play.png" handcursor="true" x="0" y="10" onclick="onnavplay()" />
+  <layer align="bottomcenter" keep="true" visible="false" type="image" name="nav_return" url="../images/skin1/return.png" handcursor="true" x="-50" y="10" onclick="onnavreturn()" />
+  <layer align="bottomcenter" keep="true" visible="false" type="image" name="nav_stop" url="../images/skin1/stop.png" handcursor="true" x="50" y="10" onclick="onnavstop()" />
+  <layer align="bottomcenter" keep="true" visible="false" type="image" name="nav_continue" url="../images/skin1/continue.png" handcursor="true" x="50" y="10" onclick="onnavcontinue()" />
+  <action name="initnavplay">
+
+   
+    if(device.mobile,
+     
+        set(layer[nav_play].y,85);
+        set(layer[nav_return].y,85);
+        set(layer[nav_stop].y,85);
+        set(layer[nav_continue].y,85);
+    
+    );
+  </action>
+  <action name="onnavplay">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,true);
+    set(layer[nav_continue].visible,false);
+    js(navplay());
+  </action>
+  <!--<action name="looknavnext">
+    js(lookcallback());
+  </action>-->
+  <action name="onnavstop">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_continue].visible,true);
+
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,false);
+
+    js(setnvastate('false'));
+
+  </action>
+  <action name="onnavreturn">
+  stoplookto();
+    set(layer[nav_play].visible,true);
+    set(layer[nav_continue].visible,false);
+    set(layer[nav_return].visible,false);
+    set(layer[nav_stop].visible,false);
+    js(setnvastate('false'));
+
+  </action>
+  <action name="onnavcontinue">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_continue].visible,false);
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,true);
+    js(setnvastate('true'));
+  </action>
+  <layer name="tour_guide_alert" url="" keep="true" align="center" edge="center" x="0" y="0" maxwidth="1000" maxheight="600" enabled="false" visible="false" />
+  <action name="show_tour_guide_alert">
+
+    set(layer[tour_guide_alert].url,%1);
+    set(layer[tour_guide_alert].visible,true);
+    set(layer[tour_guide_alert].alpha,1);
+    delayedcall(3, tween(layer[tour_guide_alert].alpha,0,1));
+
+  </action>
+</krpano>
