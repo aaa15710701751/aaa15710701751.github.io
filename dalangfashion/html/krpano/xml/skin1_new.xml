@@ -1,0 +1,3735 @@
+﻿<krpano showerrors="false">
+  <skin_settings
+
+      gyro="true"
+
+      thumbs="true"
+
+      thumbs_width="80" thumbs_height="80" thumbs_padding="10" thumbs_padding2="3" thumbs_crop="0|40|240|160"
+
+      thumbs_opened="false"
+
+      thumbs_text="true"
+
+      thumbs_dragging="true"
+
+      thumbs_onhoverscrolling="false"
+
+      thumbs_scrollbuttons="false"
+
+      thumbs_scrollindicator="false"
+
+      thumbs_loop="false"
+
+      tooltips_thumbs="true"
+
+      loading="get:config.loading_text"
+
+    />
+
+
+
+
+
+  <theme_config devices="mobile"
+
+      clearscreen_crop_def="132|300|44|44"
+
+      clearscreen_crop_curr="132|344|44|44"
+
+      like_crop_curr="88|340|44|44"
+      collect_crop_curr="176|344|44|44"
+      music_crop_def="44|300|44|44"
+
+      music_crop_curr="44|344|44|44"
+                
+
+    />
+
+
+
+  <theme_config devices="!mobile"
+
+      clearscreen_crop_def="560|0|70|72"
+
+      clearscreen_crop_curr="560|72|70|72"
+
+      like_crop_curr="630|72|70|72"
+      collect_crop_curr="630|212|70|72"
+      music_crop_def="350|0|70|72"
+
+      music_crop_curr="350|72|70|72"
+
+    />
+
+
+
+
+
+
+
+  <style name="hotspotvr_style" edge="top" distorted="true" onloaded="if(webvr.isenabled,set(visible,true),set(visible,false));"/>
+
+
+
+
+
+
+
+  <style name="menubar_style" textshadow="1" url="../plugins/textfield.swf" background="false" zorder="96" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:12px; letter-spacing:0px;"/>
+
+
+
+  <style name="btn_over_style" onover="set(alpha,0.8);" onout="set(alpha,1.0);" />
+
+
+
+  <style name="public_text_style" keep="true" url="../plugins/textfield.swf" background="false" align="leftbottom" bgalpha="0" zorder="96" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:12px; letter-spacing:2px;"/>
+
+
+
+  <style name="current_text_style" keep="true" url="../plugins/textfield.swf" background="false" align="leftbottom" bgalpha="0" zorder="96" css="text-align:center; color:#FF9900; font-family: arial, 宋体; font-size:12px; letter-spacing:2px;"/>
+
+
+
+
+
+  <style name="scene_name_style" textshadow="1" url="../plugins/textfield.swf" background="false" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:16px; letter-spacing:1px;padding:5px 10px;"/>
+
+
+
+  <style name="msg_style" roundedge="4" backgroundcolor="0x000000" backgroundalpha="0.6" url="../plugins/textfield.swf" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:15px; letter-spacing:1px;padding:10px 15px;"/>
+
+
+
+
+
+  <layer name="top_scene_name" handcursor="false" align="topcenter" keep="true" visible="true" y="-50" style="scene_name_style" html="" />
+
+
+
+
+
+  <layer name="msg" handcursor="false" align="center" zorder="99999" keep="true" alpha="0.0" visible="false" style="msg_style" html="提示消息" />
+
+
+
+
+
+  <style name="scroll_text_style" css="text-align:center;font-family:黑体; font-size:13px; color:#ffffff;letter-spacing:2px;" url="../plugins/textfield.swf" align="right" autowidth="true" autoheight="auto" />
+
+  <layer name="skin_scroll_text" handcursor="false" scrolled="false" type="container" align="top" width="100%" height="24" bgcolor="0x000000" bgalpha="0.5" visible="false" keep="true">
+
+    <layer visible="false" name="skin_scroll_text_cont" handcursor="false" style="scroll_text_style" backgroundalpha="0.0" x="0" y="0" html="" />
+
+  </layer>
+
+
+
+
+
+
+
+  <layer devices="!mobile" name="skin_logo" keep="true" visible="true" type="image" bgalpha="0.0" alpha="0.8" align="topleft" x="10" y="0" width="120" url="" onclick="" handcursor="true" onover="set(alpha,1.0);" onout="set(alpha,0.8);"/>
+
+
+
+  <layer devices="!mobile" name="skin_nickname" style="public_text_style" css="text-align:left;color:#ffffff;font-size:15px;font-family: arial, 宋体;text-shadow: 2px 2px 2px #000000;" keep="true" visible="false" bgalpha="0.0" align="topleft" x="8" y="4" width="300" height="20" html="" onclick="openurl(get:config.nickname_url,'_blank');" />
+
+
+
+  <!--<layer devices="!mobile" name="skin_qrcode" keep="true" visible="true" type="image" bgalpha="0.0" align="topright" x="10" y="10" width="80" height="80" url="" handcursor="false" />-->
+
+
+
+  <layer devices="!mobile" name="skin_hits" style="public_text_style" css="text-align:left;color:#ffffff;font-size:15px; font-family: arial, 宋体;text-shadow: 2px 2px 2px #000000;" keep="true" visible="false" bgalpha="0.0" align="topleft" x="8" y="82" width="160" height="20" html="" handcursor="false" />
+
+
+
+
+
+
+
+
+
+  <layer devices="mobile" name="skin_logo" keep="true" visible="true" type="image" bgalpha="0.0" alpha="0.8" align="topleft" x="10" y="0" width="100" url="" onclick="" />
+
+
+
+  <layer devices="mobile" name="skin_nickname" style="public_text_style" css="text-align:left;color:#ffffff;font-size:15px;font-family: arial, 宋体;" keep="true" visible="false" bgalpha="0.0" align="topleft" x="8" y="4" width="300" height="24" html="" onclick="openurl(get:config.nickname_url,'_blank');" />
+
+
+
+  <layer devices="mobile" name="skin_hits" style="public_text_style" css="text-align:left;color:#ffffff;font-family: arial, 宋体;" keep="true" visible="false" bgalpha="0.0" align="topleft" x="8" y="66" width="160" height="20" alpha="0.8" html="" handcursor="false" />
+
+
+
+
+
+
+
+  <layer name="showbar_con" style="btn_over_style" type="container" keep="true" visible="false" y="0" align="leftbottom" bgcolor="0x000000" bgalpha="0.0" width="120" height="120" scale="0.5" scalechildren="true">
+
+    <layer name="showbar_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="0|72|70|72" onclick="skin_show_ui();"/>
+
+    <layer name="showbar_txt" align="bottom" style="menubar_style" html="显示" width="120" height="40" onclick="skin_show_ui();"/>
+
+  </layer>
+
+  <layer devices="!mobile" name="skin_control_bar" keep="true" visible="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="leftbottom" width="200%" height="140" x="0" y="0" y_opened="20" y_closed="-42" zorder="4" scale="0.5" scalechildren="true">
+
+    <layer name="hidebar_con" style="btn_over_style" type="container" align="left" bgcolor="0x000000" bgalpha="0.0" width="120" height="120">
+
+      <layer name="hidebar_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="0|0|70|72" onclick="skin_hide_ui();"/>
+
+      <layer name="hidebar_txt" align="bottom" style="menubar_style" html="隐藏" width="120" height="40" onclick="skin_hide_ui();"/>
+
+    </layer>
+
+    <layer name="fullscreen_con" style="btn_over_style" type="container" align="left" bgcolor="0x000000" x="120" bgalpha="0.0" width="120" height="120">
+
+      <layer name="fullscreen_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="70|0|70|72" onclick="switch(fullscreen);"/>
+
+      <layer name="fullscreen_txt" align="bottom" style="menubar_style" html="全屏" width="120" height="40" onclick="switch(fullscreen);"/>
+
+    </layer>
+
+    <layer name="skin_btn_thumbs_con" style="btn_over_style" type="container" align="left" bgcolor="0x000000" x="240" bgalpha="0.0" width="120" height="120">
+
+      <layer name="skin_btn_thumbs" align="top" url="../images/skin1/20161111-pc-icon.png" crop="140|0|70|72" onclick="skin_showthumbs();"/>
+
+      <layer name="skin_btn_thumbs_txt" align="bottom" style="menubar_style" html="场景" width="120" height="40" onclick="skin_showthumbs();"/>
+
+    </layer>
+
+    <layer name="share_con" style="btn_over_style" type="container" align="left" bgcolor="0x000000" x="360" bgalpha="0.0" width="120" height="120">
+
+      <layer name="share_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="210|0|70|72" onclick="js(sharePano());"/>
+
+      <layer name="share_txt" align="bottom" style="menubar_style" html="分享" width="120" height="40" onclick="js(sharePano());"/>
+
+    </layer>
+
+    <layer name="intro_con" style="btn_over_style" type="container" align="left" bgcolor="0x000000" x="480" bgalpha="0.0" width="120" height="120">
+
+      <layer name="intro_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="280|0|70|72" onclick="skin_modal('remark')"/>
+
+      <layer name="intro_txt" align="bottom" style="menubar_style" html="简介" width="120" height="40" onclick="skin_modal('remark')"/>
+
+    </layer>
+
+
+
+    <layer name="viewtype_con" align="left"  type="container" bgcolor="0x000000" x="600" bgalpha="0.0" width="120" height="120" visible="false">
+      <layer name="viewtype_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="72|72|70|72" onclick="showItemMenu();"/>
+      <layer name="viewtype_txt" align="bottom" style="menubar_style" html="视角" width="120" height="40" onclick="showItemMenu();"/>
+    </layer>
+
+
+
+
+    <layer playing="true" style="btn_over_style" name="music_con" type="container" align="right" bgcolor="0x000000" x="240" bgalpha="0.0" width="120" height="120">
+
+      <layer name="snd" align="top" url="../images/skin1/20161111-pc-icon.png" crop="350|0|70|72" onclick="skin_play_music(bgmusic);"/>
+
+      <layer name="music_txt" align="bottom" style="menubar_style" html="音乐" width="120" height="40" onclick="skin_play_music(bgmusic);"/>
+
+    </layer>
+
+
+
+    <layer name="vrglasses_con" style="btn_over_style" type="container" align="right" bgcolor="0x000000" x="360" bgalpha="0.0" width="120" height="120">
+
+      <layer name="vrglasses_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="420|0|70|72" onclick="webvr.enterVR();"/>
+
+      <layer name="vrglasses_txt" align="bottom" style="menubar_style" html="VR" width="120" height="40" onclick="webvr.enterVR();"/>
+
+    </layer>
+
+    <layer name="say_con" style="btn_over_style" type="container" align="right" bgcolor="0x000000" x="240" bgalpha="0.0" width="120" height="120">
+
+      <layer name="say_btn" align="top" opened="true" url="../images/skin1/20161111-pc-icon.png" crop="490|0|70|72" onclick="js(commentFormPano());"/>
+
+      <layer name="say_txt" align="bottom" style="menubar_style" html="说一说" width="120" height="40" onclick="js(commentFormPano());"/>
+
+    </layer>
+
+    <layer name="clearscreen_con" data-hidden="0" clicked="false" style="btn_over_style" type="container" align="right" bgcolor="0x000000" x="120" bgalpha="0.0" width="120" height="120">
+
+      <layer name="clearscreen_btn" align="top" opened="true" url="../images/skin1/20161111-pc-icon.png" crop="560|0|70|72" onclick="js(hideComment());skin_set_clear_status();"/>
+
+      <layer name="clearscreen_txt" align="bottom" style="menubar_style" html="清屏" width="120" height="40" onclick="js(hideComment());skin_set_clear_status();"/>
+
+    </layer>
+
+    <layer name="collect_con" visible="false" style="btn_over_style" type="container" align="right" bgcolor="0x000000" x="0" bgalpha="0.0" width="120" height="120">
+
+      <layer name="collect_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="630|140|70|72" onclick="js(collectPano())"/>
+
+      <layer name="collect_txt" align="bottom" style="menubar_style" html="收藏" width="120" height="40" onclick="js(collectPano())"/>
+
+    </layer>
+
+    <layer name="like_con" style="btn_over_style" type="container" align="right" bgcolor="0x000000" x="0" bgalpha="0.0" width="120" height="120">
+
+      <layer name="like_btn" align="top" url="../images/skin1/20161111-pc-icon.png" crop="630|0|70|72" onclick="js(likePano())"/>
+
+      <layer name="like_txt" align="bottom" style="menubar_style" html="" width="120" height="40"/>
+
+    </layer>
+
+  </layer>
+
+
+
+
+
+
+
+  <style name="menubar_style" devices="mobile" url="../plugins/textfield.swf" background="false" zorder="96" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:13px; letter-spacing:0px;"/>
+
+  
+
+
+  <layer devices="mobile" name="skin_control_bar" keep="true" visible="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="bottom" width="560" height="172" x="0" y="0" y_opened="20" y_closed="-42" zorder="4" scale="0.5" scalechildren="true">
+
+    <layer name="skin_btn_thumbs_con" align="left" type="container" bgcolor="0x000000" x="0" bgalpha="0.0" width="140" height="148">
+      <layer name="skin_btn_thumbs" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="0|0|102|104" onclick="skin_showthumbs();"/>
+      <layer name="skin_btn_thumbs_txt" align="bottom" style="menubar_style" html="场景" width="120" height="40" onclick="skin_showthumbs();"/>
+    </layer>
+
+    <layer name="vrglasses_con" align="left"  type="container" bgcolor="0x000000" x="140" bgalpha="0.0" width="140" height="148">
+      <layer name="vrglasses_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="306|0|102|104" onclick="webvr.enterVR();"/>
+      <layer name="vrglasses_txt" align="bottom" style="menubar_style" html="VR" width="120" height="40" onclick="webvr.enterVR();"/>
+    </layer>
+
+    <layer name="mode_con" align="left"  type="container" bgcolor="0x000000" x="140" bgalpha="0.0" width="140" height="148">
+      <layer name="mode_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" opened="true" crop="102|0|102|104" onclick="skin_switch_gyro();"/>
+      <layer name="mode_txt" align="bottom" style="menubar_style" html="陀螺仪" width="120" height="40" onclick="skin_switch_gyro();"/>
+    </layer>
+
+    <layer name="intro_con" align="left"  type="container" bgcolor="0x000000" x="280" bgalpha="0.0" width="140" height="148">
+      <layer name="intro_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="204|0|102|104" onclick="skin_modal('remark')"/>
+      <layer name="intro_txt" align="bottom" style="menubar_style" html="简介" width="120" height="40" onclick="skin_modal('remark')"/>
+    </layer>
+
+    <layer name="viewtype_con" align="left"  type="container" bgcolor="0x000000" x="320" bgalpha="0.0" width="140" height="148" visible="false">
+      <layer name="viewtype_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="0|102|102|104" onclick="showItemMenu();"/>
+      <layer name="viewtype_txt" align="bottom" style="menubar_style" html="视角" width="120" height="40" onclick="showItemMenu();"/>
+    </layer>
+
+  </layer>
+
+
+
+
+  <style name="zan_style" url="../plugins/textfield.swf" background="false" zorder="96" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:11px; padding:4px 0 0 0;"/>
+
+
+  <layer devices="mobile" visible="false" playing="true" keep="true" name="music_con" type="container" align="righttop" bgcolor="0x000000" x="10" y="50" scale="0.8" scalechildren="true" bgalpha="0.0" width="42" height="60">
+
+    <layer name="snd" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="44|300|44|44" onclick="skin_play_music(bgmusic);"/>
+
+  </layer>
+
+  <layer devices="mobile" name="skin_right_bottom_con" keep="true" visible="false" type="container" bgcolor="0xFFFFFF" bgalpha="0.0" align="rightbottom" x="10" y="210" width="44" height="254" scale="0.9" scalechildren="true">
+
+    <layer data-hidden="0" clicked="false" name="clearscreen_con" type="container" align="top" bgcolor="0x000000" y="0" bgalpha="0.0" width="44" height="60" >
+      <layer name="clearscreen_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="132|300|44|44" onclick="js(hideComment());skin_set_clear_status();"/>
+      <layer name="clearscreen_btn_txt" align="bottom" style="zan_style" html="清屏" width="44" height="20"/>
+    </layer>
+
+
+    <layer name="say_con" type="container" align="top" bgcolor="0x000000" y="70" bgalpha="0.0" width="44" height="60" scalechildren="false">
+      <layer name="say_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="0|300|44|44" onclick="js(mCommentFormPano());"/>
+      <layer name="say_btn_txt" align="bottom" style="zan_style" html="说一说" width="50" height="20"/>
+    </layer>
+
+    <layer name="collect_con"  visible="false" type="container" align="top" bgcolor="0x000000" y="140" bgalpha="0.0" width="44" height="60" scalechildren="true">
+      <layer name="collect_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="176|300|44|44" onclick="js(collectPano());"/>
+      <layer name="collect_btn_txt" align="bottom" style="zan_style" html="收藏" width="44" height="20"/>
+    </layer>
+
+    <layer name="like_con" type="container" align="top" bgcolor="0x000000" y="210" bgalpha="0.0" width="44" height="60" scalechildren="true">
+      <layer name="like_btn" align="top" url="../images/skin1/20161020-mobile-icon.png" crop="88|300|44|44" onclick="js(likePano());"/>
+      <layer name="like_txt" align="bottom" style="zan_style" html="" width="44" height="20"/>
+    </layer>
+
+
+
+  </layer>
+
+
+
+  <style name="group_btn_style" url="../images/bg-group.png" keep="true" align="leftcenter" crop="0|0|80|30" />
+
+  <style name="group_comtainer_style" devices="mobile" y="200" />
+  <style name="group_comtainer_style" devices="!mobile" y="178" />
+
+  <style name="group_btn_text_style" vcenter="true" keep="true" width="78" height="16" url="../plugins/textfield.swf" align="lefttop" y="2" enabled="false" background="false" wordwrap="true" border="false" css="text-align:center; color:#333;font-size:12px;line-height:16px;"/>
+
+
+
+  <layer name="skin_group_container" style="group_comtainer_style" visible="false" keep="true" type="container" align="leftbottom" width="100%" height="30" bgcolor="0x000000" bgalpha="0">
+
+    <layer name="skin_group" url="../plugins/scrollarea.swf" visible="false" alturl="../plugins/scrollarea.js" align="center" width="540" height="30" direction="h">
+
+    </layer>
+
+  </layer>
+
+
+
+
+
+
+
+  <style name="thumb_img_style" width="78" height="78" align="lefttop" keep="true" oy="6" onover="set(alpha,0.9);" onout="set(alpha,1.0);" />
+
+  <style name="thumb_bg_style" width="80" height="80"  url="../images/bg-thumb-border.png" ox="-1" oy="-1" crop="0|0|80|80" align="lefttop" keep="true" onover="set(alpha,0.8);" onout="set(alpha,1.0);"  />
+
+
+
+  <style name="skin_thumb_title_style" vcenter="true" keep="true" width="76" height="20" url="../plugins/textfield.swf" align="bottom" y="1" enabled="false" background="false" wordwrap="true" border="false" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:12px;line-height:20px;"/>
+
+  <style name="skin_thumb_title_bg_style" url="../images/skin1/20161111-pc-icon.png" keep="true" width="78" height="20" align="leftbottom" y="0" maskchildren="true" crop="0|297|76|20"/>
+
+
+
+  <layer name="skin_loadingtext"  keep="true" zorder="97" url="../plugins/textfield.swf" align="center" x="5" y="-5" html="loading..." visible="false" autoheight="true" background="false" border="false" enabled="false" textshadow="1" textshadowrange="6.0" textshadowangle="90" textshadowcolor="0x000000" css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:22px; font-style:italic;"/>
+
+
+
+  <layer name="skin_scroll_window" type="container" keep="true" align="leftbottom" width="100%" height="100%" x="0" y="80" maskchildren="true">
+
+    <layer name="skin_scroll_layer" type="container" align="leftbottom" width="100%" height="100%" x="0" y="-100%">
+
+      <layer name="skin_scroll_container" type="container" visible="false" bgcolor="0x000000" bgalpha="0.3" align="lefttop" width="100%" height="100%" x="0" y="0" maskchildren="true">
+
+        <layer name="skin_thumbs_container" type="container" align="lefttop" width="100%" height="100%" visible="false">
+
+          <layer name="skin_thumbs_scrollindicator" type="container" bgcolor="0xFFFFFF" bgalpha="0.25" align="lefttop" width="0" y="100" height="4" visible="false" enabled="false" />
+
+          <layer devices="mouse" name="skin_btn_prev" url="../images/skin1/20161111-pc-icon.png" zorder="99" crop="98|200|20|30" align="lefttop" x="10" y="28" alpha="0.5" onclick="skin_load_index_scene(-1);" />
+
+          <layer devices="mouse" name="skin_btn_next" url="../images/skin1/20161111-pc-icon.png" zorder="99" crop="118|200|20|30" align="righttop" x="10" y="28" alpha="1" onclick="skin_load_index_scene(+1);" />
+
+          <layer name="skin_thumbs" state="closed" url="../plugins/scrollarea.swf" alturl="../plugins/scrollarea.js" direction="h" align="top" onhover_autoscrolling="false" width="100%" height="90" zorder="1" onloaded="skin_updatescroll();" onscroll="skin_updatethumbscroll();" />
+
+        </layer>
+
+      </layer>
+
+    </layer>
+
+  </layer>
+
+
+
+
+
+
+
+  <layer devices="!mobile" name="skin_right_menu_con" keep="true" visible="true" type="container" bgcolor="0xFFFFFF" bgalpha="0.0" align="topright" x="10" y="80" width="80" height="170" scalechildren="true">
+
+  </layer>
+
+
+
+  <layer devices="mobile" name="skin_right_menu_con" keep="true" visible="true" type="container" bgcolor="0xFFFFFF" bgalpha="0.0" align="topright" x="10" y="4" width="80" height="170" scalechildren="true">
+
+  </layer>
+
+
+
+
+
+  <layer style="btn_over_style" name="map_btn" keep="true" visible="false" type="image" opened="false" align="rightcenter" url="../images/skin1/20161111-pc-icon.png" crop="0|200|56|56" x="10" distorted="false" y="-60" onclick="skin_toggle_map();"/>
+
+
+
+
+
+  <layer devices="!mobile" name="map_floor_container" keep="true" visible="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="rightcenter" width="80" height="160" x="-450" y="70" scalechildren="true">
+
+  </layer>
+
+  <layer devices="mobile" name="map_floor_container" keep="true" visible="false" type="container" bgcolor="0x000000" bgalpha="0.0" align="rightcenter" width="80" height="160" x="-450" y="110" scalechildren="true">
+
+  </layer>
+
+
+
+
+
+  <layer devices="!mobile" name="map_container" zoomed="false" keep="true" visible="false" type="container" bgcolor="0x000000" bgalpha="0.5" align="righttop" width="230" height="222" x="-450" y="0" imagewidth="" imageheight="" scalechildren="true" scale="0.7" >
+
+    <layer name="mapImage" lign="lefttop" url="" handcursor="false">
+
+      <layer name="radarmask" type="container" align="lefttop" width="100%" height="100%" maskchildren="true">
+
+        <layer name="radar" visible="true" url="../plugins/radar.swf" alturl="../plugins/radar.js" align="lefttop" edge="center" zorder="1" scale="0.3" fillcolor="0x627FBF" fillalpha="0.0" linecolor="0xFC1010" linewidth="1" linealpha="1" headingoffset="0" />
+
+      </layer>
+
+    </layer>
+
+    <layer name="map_zoom_btn" style="btn_over_style" keep="true" visible="true" type="image" align="center" url="../images/skin1/20161111-pc-icon.png" crop="100|260|80|26" y="0" width="80" height="35" onclick="skin_zoom_map();">
+
+      <layer name="map_zoom_txt" url="../plugins/textfield.swf" background="false" css="font-family: arial, 宋体;font-size:14px;color:#cccccc;line-height:26px;letter-spacing:3px;" html="放大" y="-4" x="15" width="80" height="40" onclick="skin_zoom_map();" />
+
+    </layer>
+
+  </layer>
+
+  
+  
+  
+  
+  <layer devices="mobile" name="map_container" zoomed="false" keep="true" visible="false" type="container" bgcolor="0x000000" scale="0.6" bgalpha="0.5" align="righttop" width="230" height="222" x="-450" imagewidth="" imageheight="" scalechildren="true">
+
+    <layer name="mapImage" lign="lefttop" url="" handcursor="false">
+
+      <layer name="radarmask" type="container" align="lefttop" width="100%" height="100%" maskchildren="true">
+
+        <layer name="radar" visible="true" url="../plugins/radar.swf" alturl="../plugins/radar.js" align="lefttop" edge="center" zorder="1" scale="0.3" fillcolor="0x627FBF" fillalpha="0.0" linecolor="0xFC1010" linewidth="1" linealpha="1" headingoffset="0" />
+
+      </layer>
+
+    </layer>
+
+    <layer name="map_zoom_btn" style="btn_over_style" keep="true" visible="true" type="image" align="center" url="../images/skin1/20161111-pc-icon.png" crop="100|260|80|26" y="0" width="80" height="40" onclick="skin_zoom_map();">
+
+      <layer name="map_zoom_txt" url="../plugins/textfield.swf" background="false" css="font-family: arial, 宋体;font-size:14px;color:#cccccc;line-height:26px;letter-spacing:3px;" html="放大" x="10" y="-5" width="80" height="40" onclick="skin_zoom_map();" />
+
+    </layer>
+
+  </layer>
+
+  
+  
+  
+
+
+  <style name="scene_remark_style" url="../plugins/textfield.swf"  background="true" border="false" css="text-align:center; color:#FFFFFF; font-family: arial, 宋体; font-size:14px;line-height:46px;" backgroundcolor="0x000000" backgroundalpha="0.5" />
+
+
+
+  <layer name="left_menu_container" type="container" keep="true" visible="false" opened="false" align="leftcenter" width="80" height="90" bgcolor="0x000000" bgalpha="0.0" x="-72" y="0">
+
+    <layer name="scene_remark_txt" style="scene_remark_style" html="场景介绍" align="leftcenter" width="71" height="50" onclick="skin_modal('scene_remark');" />
+
+    <layer name="scene_remark_btn" type="image" visible="true" align="leftcenter" x="71" url="../images/skin1/20161111-pc-icon.png" crop="66|200|30|50" onclick="skin_scene_remark();" />
+
+  </layer>
+
+
+
+
+
+
+  <layer name="skin_start_help" keep="true" visible="false" type="image" maxwidth="1000" maxheight="600" align="center" url="../images/skin1/help.png" onclick="toggle_start_help();" />
+
+
+
+
+  <hotspot name="hot_bottom_ad" url="" keep="true" ath="0" atv="90" enabled="false" distorted="true" scale="1.0" />
+
+
+
+
+
+  <style name="skin_trace_style" keep="true" url="../plugins/textfield.swf" background="false" bgalpha="0" zorder="96" css="text-align:left; color:#000000; font-family: arial, 宋体; font-size:14px;padding:10px;"/>
+
+  <layer name="skin_trace" visible="false" style="skin_trace_style" zorder="90" align="lefttop" x="0" y="0" html="666666"  background="true" backgroundcolor="0xFFFFFF" backgroundalpha="1.0"/>
+
+
+
+
+
+  <layer keep="true" visible="false" zorder="9999" name="modal_layer_mask" type="container" width="100%" height="100%" align="lefttop" bgcolor="0x000000" bgalpha="0.7">
+
+    <layer name="modal_layer_close" style="btn_over_style" scale="0.24" type="image" url="../images/icon-close.png" align="righttop" x="10" y="10" onclick="skin_hide_mask()" />
+
+  </layer>
+
+
+
+
+
+  <style name="comment_voice_style" x="4" align="bottom" url="../images/bg-voice.png" crop="0|0|26|26" framewidth="26" frameheight="26" frame="0" lastframe="3" onloaded="comment_voice_animate();" />
+
+
+
+
+
+
+
+
+
+
+
+  <plugin name="soundinterface" keep="true" url="../plugins/soundinterface.swf" alturl="../plugins/soundinterface.js" />
+
+
+
+
+
+  <autorotate enabled="false" waittime="3.0" speed="-3.0" horizon="0.0" tofov="120.0" />
+
+
+
+
+
+  <plugin name="skin_gyro" keep="true" url="" html5_url="../plugins/gyro2.js" devices="html5" enabled="false" />
+
+
+
+  <include devices="mouse" url="../plugins/showtext.xml" />
+
+
+
+
+
+
+
+  <layer name="itemmenu_layer"  type="container" keep="true" align="bottom" width="120" height="230" bgalpha="0.8" x="100" y="100" visible="false" >
+    <layer name="mitemmenu_1" align="top" style="menubar_style" html="切换控制模式" width="120" height="30" y="0"  onclick="cm_changecontrolmode();"/>
+    <layer name="mitemmenu_2" align="top" style="menubar_style" html="正常视角" width="120" height="30"  y="30" onclick="cm_normal_view();"/>
+    <layer name="mitemmenu_3" align="top" style="menubar_style" html="鱼眼视角" width="120" height="30"  y="60" onclick="cm_fisheye_view();"/>
+    <layer name="mitemmenu_4" align="top" style="menubar_style" html="立体视角" width="120" height="30"  y="90" onclick="cm_stereographic_view();"/>
+    <layer name="mitemmenu_5" align="top" style="menubar_style" html="建筑视角" width="120" height="30"  y="120" onclick="cm_architectural_view();"/>
+    <layer name="mitemmenu_6" align="top" style="menubar_style" html="超小视角" width="120" height="30"  y="150" onclick="cm_pannini_view();"/>
+    <layer name="mitemmenu_7" align="top" style="menubar_style" html="小行星视角" width="120" height="30"  y="180" onclick="cm_littleplanet_view();"/>
+    <layer name="mitemmenu_8" align="top" style="menubar_style" html="球体视角" width="120" height="30"  y="210" onclick="skin_view_ball();"/>
+  </layer>
+
+
+
+
+
+
+
+  <action name="skin_trace">
+
+    set(layer[skin_trace].visible,true);
+
+    set(layer[skin_trace].html,%1);
+
+  </action>
+
+
+
+
+
+  <action name="skin_loaded">
+
+    skin_showloading(false);
+
+
+
+
+
+    toggle_start_help();
+
+
+
+    if(config.init_scene_anime == 1,set(init_delaye_time,3.2);,set(init_delaye_time,0.2););
+
+
+
+    if(first_loaded_scene
+
+    ,
+
+    set(first_loaded_scene,false);
+
+    set(map_opened,false);
+
+    delayedcall(get(init_delaye_time),
+
+
+
+    skin_init_menu();
+
+
+
+    if(config.show_scene_thumb == 1
+
+    ,
+
+    skin_showthumbs(true);
+
+    ,
+    skin_showthumbs(true);
+    delayedcall(3,skin_showthumbs(false));
+
+    );
+
+
+
+    js(initPanoUi());
+
+
+
+    skin_auto_next_scene();
+
+
+
+    skin_addhotspot();
+
+
+
+    skin_init_map();
+
+
+
+    skin_scene_info();
+
+
+
+    skin_init_scroll();
+
+
+    skin_init_other();
+
+
+
+
+
+    if(config.init_scene_anime == 1
+
+    ,
+
+    set(view.vlookatmin, get(first_vlookatmin));
+
+    set(view.vlookatmax, get(first_vlookatmax));
+
+    );
+
+    );
+
+    ,
+
+
+
+    skin_addhotspot();
+
+
+
+    skin_init_map();
+
+
+
+    skin_scene_info();
+
+    );
+
+  </action>
+
+  <action name="playscenesnow">
+    if(scene[get(xml.scene)].bgsnow == 0,
+      showsnow0();
+    ,
+      if(scene[get(xml.scene)].bgsnow == 1,
+        showsnow1();
+         ,
+        if(scene[get(xml.scene)].bgsnow == 2,
+          showsnow2();
+           ,
+          if(scene[get(xml.scene)].bgsnow == 3,
+            showsnow3();
+             ,
+            if(scene[get(xml.scene)].bgsnow == 4,
+              showsnow4();
+               ,
+              if(scene[get(xml.scene)].bgsnow == 5,
+                showsnow5();
+                 ,
+                if(scene[get(xml.scene)].bgsnow == 6,
+                  showsnow6();
+                   ,
+                  if(scene[get(xml.scene)].bgsnow == 7,
+                    showsnow7();
+                     ,
+                    if(scene[get(xml.scene)].bgsnow == 8,
+                      showsnow8();
+                       ,
+                        if(scene[get(xml.scene)].bgsnow == 9,
+                          showsnow9();
+                           ,
+                          if(scene[get(xml.scene)].bgsnow == 10,
+                            showsnow10();
+                          );
+                        );
+                    );
+                  );
+                );
+              );
+            );
+          );
+        );
+      );
+    );
+  </action>
+
+
+
+
+
+  <action name="skin_click">
+
+    skin_showthumbs();
+
+    toggle_start_help();
+
+  </action>
+
+
+
+
+
+  <action name="skin_muouse_down">
+
+    toggle_start_help();
+
+
+
+    set(bt,0);
+
+
+
+
+
+    set(layer[clearscreen_con].data-hidden,0);
+
+    <!--js(hideComment());-->
+
+  </action>
+
+
+
+
+
+  <action name="skin_muouse_up">
+
+
+
+    set(layer[clearscreen_con].data-hidden,1);
+
+    if(!layer[clearscreen_con].clicked
+
+    ,
+
+    js(hideComment());
+
+    );
+
+
+
+  </action>
+
+
+
+
+
+  <action name="skin_show_mask">
+
+    set(layer[modal_layer_mask].visible,true);
+
+    js(hidePanoUi());
+
+  </action>
+
+
+
+
+
+  <action name="skin_set_clear_status">
+
+    if(layer[clearscreen_con].clicked
+
+    ,
+
+    skin_switch_msg('说一说已显示');
+
+    set(layer[clearscreen_con].clicked,false);
+
+    ,
+
+    skin_switch_msg('说一说已隐藏');
+
+    set(layer[clearscreen_con].clicked,true);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_hide_mask">
+
+    set(layer[modal_layer_mask].visible,false);
+
+    js(showPanoUi());
+
+  </action>
+
+
+
+
+
+  <action name="skin_scene_info">
+
+    txtadd(currscenename,'场景:',get(scene[get(currscene)].title));
+
+    set(layer[top_scene_name].html,get(currscenename));
+
+    stoptween(layer[top_scene_name].y);
+
+    tween(layer[top_scene_name].y,80,1.5,easeOutQuint);
+
+    stopdelayedcall(nametimer);
+
+    delayedcall(nametimer,6,
+
+    tween(layer[top_scene_name].y,-50,1.5,easeOutQuint);
+
+    );
+
+
+
+    if(scene[get(currscene)].remark != ""
+
+    ,
+
+    set(have_scene_remark,true);
+
+    set(layer[left_menu_container].visible,true);
+
+    ,
+
+    set(have_scene_remark,false);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_scene_remark">
+
+    if(layer[left_menu_container].opened
+
+    ,
+
+    tween(layer[left_menu_container].x,-72,0.5,easeOutQuint,set(layer[left_menu_container].opened,false));
+
+    ,
+
+    tween(layer[left_menu_container].x,0,0.5,easeOutQuint,set(layer[left_menu_container].opened,true));
+
+    );
+
+
+
+  </action>
+
+
+
+
+
+  <action name="skin_switch_msg">
+
+    stoptween(layer[msg].alpha);
+
+    set(layer[msg].html,%1);
+
+    set(layer[msg].alpha,1.0);
+
+    set(layer[msg].visible,true);
+
+    delayedcall(2,tween(layer[msg].alpha,0,1.5,easeOutQuint,set(layer[msg].visible,false)););
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_init_scroll">
+   
+    if(config.scroll_text !== null AND config.scroll_text != ""
+    ,
+    set(layer[skin_scroll_text].visible,true);
+    set(layer[skin_scroll_text_cont].html,get(config.scroll_text));
+    skin_scrolltext();
+    );
+  </action>
+
+
+
+
+
+  <action name="skin_switch_gyro">
+
+
+
+    switch(plugin[skin_gyro].enabled);
+
+    if(plugin[skin_gyro].enabled == true,
+
+    skin_switch_msg('陀螺仪已经打开');
+
+    ,
+
+    skin_switch_msg('陀螺仪已经关闭');
+
+    );
+
+  </action>
+
+
+
+
+
+  <action devices="!mobile" name="skin_init_other">
+
+
+
+    txtadd(nickname,'作者：',get(config.nickname));
+
+    set(layer[skin_nickname].html,get(nickname));
+
+    set(layer[skin_nickname].onclick,openurl(get(config.nickname_url),'_blank'));
+
+    if(config.is_vip == '0' , set(layer[skin_nickname].visible,true); );
+
+    if(config.is_vip == '1' AND config.show_nickname == '1', set(layer[skin_nickname].visible,true); );
+
+
+
+
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+    ,
+    set(layer[skin_qrcode].y,30);
+    set(layer[skin_hits].y,112);
+    );
+
+
+
+
+
+    if(config.show_hit_like === null OR config.show_hit_like == '1'
+
+    ,
+
+    set(layer[skin_hits].visible,true);
+
+    );
+
+
+
+
+
+    if(config.is_vip == '1'
+
+    ,
+
+    set(layer[skin_nickname].y,8);
+
+    if(config.scroll_text !== null AND config.scroll_text != "",set(layer[skin_nickname].y,28););
+
+
+
+    if(config.logo !== null AND config.logo != ""
+
+    ,
+
+    txtadd(logo_url,'',get(config.logo));
+
+    set(layer[skin_logo].url,get(logo_url));
+
+    set(layer[skin_logo].alpha,1.0);
+
+    set(layer[skin_logo].y,10);
+
+    set(layer[skin_logo].onover,set(alpha,0.8););
+
+    set(layer[skin_logo].onout,set(alpha,1.0););
+
+    set(layer[skin_logo].width,get(config.logo_width));
+
+    set(layer[skin_logo].height,get(config.logo_height));
+
+    <!--div(logoscale,120,get(config.logo_width));-->
+
+    <!--mul(logoheight,get(logoscale),get(config.logo_height));-->
+    set(logoheight,get(config.logo_height));
+
+    add(logoheight,16);
+
+    <!--set(layer[skin_logo].scale,get(logoscale));-->
+
+    set(layer[skin_logo].onclick,openurl(get(config.logo_url),'_blank'));
+
+    set(layer[skin_nickname].y,get(logoheight));
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    set(layer[skin_logo].y,30);
+
+    add(logoheight,18);
+
+    set(layer[skin_nickname].y,get(logoheight));
+
+    );
+
+    );
+
+    set(layer[skin_hits].y,get(layer[skin_nickname].y));
+
+    ,
+    set(hity,get(layer[skin_nickname].y));
+    add(hity, 24);
+    set(layer[skin_hits].y,get(hity));
+    );
+
+    );
+
+
+
+
+
+    if(config.is_vip == '0'
+
+    ,
+
+    txtadd(logo_url,'','krpano/images/logo.png');
+
+    set(layer[skin_logo].url,get(logo_url));
+
+    set(layer[skin_logo].y,10);
+
+    set(layer[skin_logo].height,26);
+
+    set(layer[skin_logo].onclick,openurl(get(config.app_url),'_blank'));
+
+    set(layer[skin_nickname].y,42);
+
+    if(config.scroll_text !== null AND config.scroll_text != "",set(layer[skin_logo].y,30);set(layer[skin_nickname].y,62););
+
+    );
+
+
+
+
+
+    if(config.group,set(layer[skin_group_container].visible, true);set(layer[skin_group].visible, true););
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_init_other">
+
+
+
+    txtadd(nickname,'作者：',get(config.nickname));
+
+    set(layer[skin_nickname].html,get(nickname));
+
+    set(layer[skin_nickname].onclick,openurl(get(config.nickname_url),'_blank'));
+
+    if(config.is_vip == '0' , set(layer[skin_nickname].visible,true); );
+
+    if(config.is_vip == '1' AND config.show_nickname == '1', set(layer[skin_nickname].visible,true););
+
+
+
+
+
+    if(config.auto_mobile_gyro == '1'
+
+    ,
+
+
+
+    skin_switch_gyro();
+
+    );
+
+
+
+
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    set(layer[skin_hits].y,84);
+
+    );
+
+
+
+
+
+    if(config.is_vip == '1'
+
+    ,
+
+    set(layer[skin_nickname].y,8);
+
+    set(layer[skin_hits].y,30);
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    set(layer[skin_nickname].y,28);
+
+    set(layer[skin_hits].y,50);
+
+    if(config.show_nickname == '0',set(layer[skin_hits].y,28););
+
+    );
+
+
+
+    if(config.logo !== null AND config.logo != ""
+
+    ,
+
+    txtadd(logo_url,'',get(config.logo));
+
+    set(layer[skin_logo].url,get(logo_url));
+
+    set(layer[skin_logo].alpha,1.0);
+
+    set(layer[skin_logo].y,10);
+
+    set(layer[skin_logo].onover,set(alpha,0.8););
+
+    set(layer[skin_logo].onout,set(alpha,1.0););
+
+    set(layer[skin_logo].width,get(config.logo_width));
+
+    set(layer[skin_logo].height,get(config.logo_height));
+
+    div(logoscale,140,get(config.logo_width));
+
+    mul(logoheight,get(logoscale),get(config.logo_height));
+
+    add(logoheight,16);
+
+    set(layer[skin_logo].scale,get(logoscale));
+
+    set(layer[skin_logo].onclick,openurl(get(config.logo_url),'_blank'));
+
+    set(layer[skin_nickname].y,get(logoheight));
+
+
+
+    add(logoheight,22);
+
+    set(layer[skin_hits].y,get(logoheight));
+
+    if(config.show_nickname == '0',sub(logoheight,22);set(layer[skin_hits].y,get(logoheight)););
+
+
+
+
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    set(layer[skin_logo].y,30);
+
+    set(layer[skin_nickname].y,get(logoheight));
+
+    add(logoheight,22);
+
+    set(layer[skin_hits].y,get(logoheight));
+
+    if(config.show_nickname == '0',sub(logoheight,4);set(layer[skin_hits].y,get(logoheight)););
+
+    );
+
+    ,
+
+    if(config.show_nickname == '0',
+
+    if(config.scroll_text == null OR config.scroll_text == "",set(layer[skin_hits].y,8););
+
+    );
+
+    );
+
+    );
+
+
+
+    if(config.group,
+
+    set(layer[skin_group_container].visible, true);
+
+    set(layer[skin_group].visible, true);
+
+
+
+
+
+    set(layer[map_btn].y,-50);
+
+    set(layer[left_menu_container].y,-54);
+
+    set(layer[skin_right_bottom_con].y,226);
+
+    if(config.count_group GT 5,set(layer[skin_group].align,leftcenter););
+
+    );
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_loadscene">
+
+    skin_before_loadscene(%1); if(config.group AND %2 != 1, skin_show_group_thumbs(get(scene[%1].group)); ); if(config.scene_change_type == 'forward' , lookto(get(hotspot[%1].ath),0,45); loadscene(%1,null, MERGE,BLEND(1.0, easeInCubic)); , loadscene(%1,null, MERGE,get(config.scene_change_type)); ); add_bottom_ad(); skin_thumb_current(get(last_view_scene_index)); set(last_view_scene_index,get(scene[get(xml.scene)].index)); set(currscene,%1);
+
+
+
+    <!--trace(get(scene[get(currscene)].bgmusic));-->
+    <!--切换场景音乐-->
+    <!--skin_play_music(bgmusic);-->
+
+if(config.pc_bg_music == 1,
+    if(get(layer[music_con].playing)
+    ,
+
+    if(scene[get(currscene)].bgmusic === null
+    ,
+    if(current_music!=config.bg_music_src,
+
+    playsound(bgmusic,get(config.bg_music_src) ,100000);
+    set(current_music, get(config.bg_music_src));
+    )
+    ,
+
+    playsound(bgmusic,get(scene[get(currscene)].bgmusic),100000);
+    set(current_music, get(scene[get(currscene)].bgmusic));
+
+    );
+    );
+);
+
+  </action>
+
+  <action name="skin_before_loadscene">
+    toggle_start_help(true);
+
+    stoptween(layer[top_scene_name].y);
+    set(layer[top_scene_name].y,-50);
+    set(layer[left_menu_container].visible,false);
+
+    if(scene[%1].mapid == 'N/A',skin_toggle_map(true););
+
+  </action>
+
+
+  <action devices="!mobile" name="skin_init_menu">
+
+    set(diy_bottom_menu_count,get(bottom_menu[0].menu.count));
+
+    set(diy_right_menu_count,get(area_menu[0].menu.count));
+    set(music_con_visible,true);
+
+    set(say_con_visible,true);
+    set(like_con_visible,true);
+
+    set(music_con_x,600);
+    set(vrglasses_con_x,480);
+    set(say_con_x,360);
+    set(clearscreen_con_x,240);
+    set(collect_con_x,120);
+
+
+    if(config.pano_remark === null OR config.pano_remark == ""
+
+    ,
+    set(layer[intro_con].visible,false);
+    set(menu_postion_left,480);
+    set(layer[viewtype_con].x,480);
+    ,
+
+    set(menu_postion_left,600);
+    );
+
+    if(config.viewtype_show == '1',
+    set(layer[viewtype_con].visible,true);
+    add(menu_postion_left,120);
+    );
+
+    if(config.bg_music_src === null OR config.bg_music_src == "" OR config.pc_bg_music === null OR config.pc_bg_music == '0'
+
+    ,
+    set(layer[music_con].visible,false);
+    set(music_con_visible,false);
+
+    );
+
+    if(config.show_comment == 0
+    ,
+
+    set(layer[say_con].visible,false);
+    set(layer[clearscreen_con].visible,false);
+    set(say_con_visible,false);
+    );
+
+    if(config.show_hit_like == 0
+    ,
+    set(layer[like_con].visible,false);
+    set(like_con_visible,false);
+    );
+
+    if(!like_con_visible AND music_con_visible AND say_con_visible
+    ,
+    set(music_con_x,480);set(vrglasses_con_x,360);set(say_con_x,240);set(clearscreen_con_x,120);set(collect_con_x,0);
+    ,
+    if(!like_con_visible AND music_con_visible AND !say_con_visible
+    ,
+    set(music_con_x,120);set(vrglasses_con_x,0);set(collect_con_x,0);
+    ,
+    if(!like_con_visible AND !music_con_visible AND say_con_visible
+    ,
+
+    set(vrglasses_con_x,360);set(say_con_x,240);set(clearscreen_con_x,120);set(collect_con_x,0);
+    );
+    );
+
+    );
+
+
+
+    if(!say_con_visible AND music_con_visible AND like_con_visible
+
+    ,
+
+    set(music_con_x,360);set(vrglasses_con_x,240);set(collect_con_x,120);
+
+    ,
+
+    if(!say_con_visible AND !music_con_visible AND like_con_visible
+
+    ,
+
+    set(vrglasses_con_x,240);set(collect_con_x,120);
+
+    ,
+
+    if(!say_con_visible AND !music_con_visible AND !like_con_visible
+
+    ,
+
+    set(vrglasses_con_x,120);set(collect_con_x,0);
+
+    );
+
+
+
+    );
+
+    );
+
+
+    set(layer[music_con].x,get(music_con_x));
+    set(layer[vrglasses_con].x,get(vrglasses_con_x));
+    set(layer[say_con].x,get(say_con_x));
+    set(layer[clearscreen_con].x,get(clearscreen_con_x));
+    set(layer[collect_con].x,get(collect_con_x));
+
+    if(diy_bottom_menu_count !== null
+    ,
+
+    for(set(i,0), i LT diy_bottom_menu_count, inc(i),
+    txtadd(bottom_menu_name,'bottom_menu_con_',get(i));
+    addlayer(get(bottom_menu_name));
+
+    set(layer[get(bottom_menu_name)].type,'container');
+
+    set(layer[get(bottom_menu_name)].parent, 'skin_control_bar');
+
+    set(layer[get(bottom_menu_name)].align, left);
+
+    set(layer[get(bottom_menu_name)].bgcolor, '0x000000');
+
+    set(layer[get(bottom_menu_name)].bgalpha,'0.0');
+
+    set(layer[get(bottom_menu_name)].width, 120);
+
+    set(layer[get(bottom_menu_name)].height, 120);
+
+    set(layer[get(bottom_menu_name)].keep, true);
+
+    mul(menubarxx,i,120);
+
+    add(menubarxx,get(menu_postion_left));
+
+    set(layer[get(bottom_menu_name)].x, get(menubarxx));
+
+    skin_set_menu_icon(get(i));
+
+
+
+    txtadd(bottom_menu_btn_name,'bottom_menu_btn_',get(i));
+
+    addlayer(get(bottom_menu_btn_name));
+
+    set(layer[get(bottom_menu_btn_name)].align, top);
+
+    set(layer[get(bottom_menu_btn_name)].url, 'krpano/images/skin1/20161111-pc-icon.png');
+
+    set(layer[get(bottom_menu_btn_name)].crop, get(currcrop));
+
+    set(layer[get(bottom_menu_btn_name)].parent, get(bottom_menu_name));
+
+    set(layer[get(bottom_menu_btn_name)].keep, true);
+
+    set(layer[get(bottom_menu_btn_name)].html,get(bottom_menu[0].menu[get(i)].title));
+
+
+
+    set(layer[get(bottom_menu_btn_name)].type_id,get(bottom_menu[0].menu[get(i)].type_id));
+
+    set(layer[get(bottom_menu_btn_name)].data,get(bottom_menu[0].menu[get(i)].data));
+    set(layer[get(bottom_menu_btn_name)].datastr,get(bottom_menu[0].menu[get(i)].datastr));
+
+    set(layer[get(bottom_menu_btn_name)].datai,get(i));
+
+    set(layer[get(bottom_menu_btn_name)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr));skin_clear_menu_tips(get(type_id),get(datai)));
+
+
+
+
+
+    txtadd(bottom_menu_txt_name,'bottom_menu_txt_',get(i));
+
+    addlayer(get(bottom_menu_txt_name));
+
+    set(layer[get(bottom_menu_txt_name)].align, bottom);
+
+    set(layer[get(bottom_menu_txt_name)].width, 120);
+
+    set(layer[get(bottom_menu_txt_name)].height, 40);
+
+    set(layer[get(bottom_menu_txt_name)].html,get(bottom_menu[0].menu[get(i)].title));
+
+    set(layer[get(bottom_menu_txt_name)].parent, get(bottom_menu_name));
+
+    set(layer[get(bottom_menu_txt_name)].keep, true);
+
+
+
+    set(layer[get(bottom_menu_txt_name)].type_id,get(bottom_menu[0].menu[get(i)].type_id));
+
+    set(layer[get(bottom_menu_txt_name)].data,get(bottom_menu[0].menu[get(i)].data));
+    set(layer[get(bottom_menu_txt_name)].datastr,get(bottom_menu[0].menu[get(i)].datastr));
+
+    set(layer[get(bottom_menu_txt_name)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr));skin_clear_menu_tips(get(type_id),get(datai)));
+
+
+
+    layer[get(bottom_menu_name)].loadstyle('btn_over_style');
+
+    layer[get(bottom_menu_txt_name)].loadstyle(menubar_style);
+
+    );
+
+    );
+
+
+
+
+
+    if(diy_right_menu_count != null
+
+    ,
+
+    for(set(k,0), k LT diy_right_menu_count, inc(k),
+
+    mul(rightmenuy,k,35);
+
+    txtadd(right_menu,'layer_right_menu',get(k));
+
+    addlayer(get(right_menu));
+
+    set(layer[get(right_menu)].parent, 'skin_right_menu_con');
+
+    set(layer[get(right_menu)].url,../plugins/textfield.swf);
+
+    set(layer[get(right_menu)].html,get(area_menu[0].menu[get(k)].title));
+
+    set(layer[get(right_menu)].enabled,true);
+
+    set(layer[get(right_menu)].alpha,1);
+
+    set(layer[get(right_menu)].align,top);
+
+    set(layer[get(right_menu)].width,80);
+
+    set(layer[get(right_menu)].bgroundedge,4);
+
+    set(layer[get(right_menu)].backgroundcolor,0x000000);
+
+    set(layer[get(right_menu)].backgroundalpha,0.4);
+
+    set(layer[get(right_menu)].padding,'2 3');
+
+    set(layer[get(right_menu)].css,'font-size: 13px;color: #FFFFFF;font-family: arial, 宋体;text-align:center; ');
+
+    set(layer[get(right_menu)].keep,true);
+
+    set(layer[get(right_menu)].x,0);
+
+    set(layer[get(right_menu)].y,get(rightmenuy));
+
+    set(layer[get(right_menu)].zorder,1);
+
+
+
+    set(layer[get(right_menu)].type_id,get(area_menu[0].menu[get(k)].type_id));
+
+    set(layer[get(right_menu)].data,get(area_menu[0].menu[get(k)].data));
+    set(layer[get(right_menu)].datastr,get(area_menu[0].menu[get(k)].datastr));
+
+    set(layer[get(right_menu)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr)));
+
+    layer[get(right_menu)].loadstyle('btn_over_style');
+
+    );
+
+    set(layer[skin_right_menu_con].visible,true);
+
+    );
+
+
+
+    set(layer[skin_control_bar].visible,true);
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_init_menu">
+
+    set(diy_bottom_menu_count,get(bottom_menu[0].menu.count));
+
+    set(diy_right_menu_count,get(area_menu[0].menu.count));
+
+    set(skin_control_bar_w,560);
+
+    if(config.viewtype_show == '1',
+    set(skin_control_bar_w,700);
+    set(layer[viewtype_con].visible,true);
+    );
+
+
+
+
+    set(vrglasses_con_visible,true);
+
+    set(mode_con_visible,true);
+
+    set(intro_con_visible,true);
+
+
+
+    set(vrglasses_con_x,140);
+
+    set(mode_con_x,280);
+
+    set(intro_con_x,420);
+
+    set(viewtype_con_x,560);
+
+
+
+
+
+    <!--if(plugin[skin_gyro].isavailable == true
+
+    ,
+    set(layer[vrglasses_con].visible,true);
+
+    ,
+
+    set(layer[vrglasses_con].visible,false);
+    set(layer[mode_con].visible,false);
+    set(intro_con_x,140);
+    set(skin_control_bar_w,280);
+    );-->
+
+
+
+    if(config.pano_remark === null OR config.pano_remark == ""
+
+    ,
+    set(layer[intro_con].visible,false);
+    sub(skin_control_bar_w,140);
+    set(viewtype_con_x,420);
+    );
+
+
+
+
+
+    if(diy_bottom_menu_count !== null
+
+    ,
+
+    for(set(i,0), i LT diy_bottom_menu_count, inc(i),
+
+    txtadd(bottom_menu_name,'bottom_menu_con_',get(i));
+
+    addlayer(get(bottom_menu_name));
+
+    set(layer[get(bottom_menu_name)].type,'container');
+
+    set(layer[get(bottom_menu_name)].parent, 'skin_control_bar');
+
+    set(layer[get(bottom_menu_name)].bgcolor, '0x000000');
+
+    set(layer[get(bottom_menu_name)].bgalpha,'0.0');
+
+    set(layer[get(bottom_menu_name)].width, 140);
+
+    set(layer[get(bottom_menu_name)].height, 148);
+
+    set(layer[get(bottom_menu_name)].keep, true);
+    set(layer[get(bottom_menu_name)].align, 'left');
+
+    mul(menubarwidth,i,140);
+
+    add(menubarwidth,get(skin_control_bar_w));
+
+    set(layer[get(bottom_menu_name)].x, get(menubarwidth));
+
+    skin_set_menu_icon(get(i));
+
+
+
+    txtadd(bottom_menu_btn_name,'bottom_menu_btn_',get(i));
+
+    addlayer(get(bottom_menu_btn_name));
+
+    set(layer[get(bottom_menu_btn_name)].align, top);
+
+    set(layer[get(bottom_menu_btn_name)].url, 'krpano/images/skin1/20161020-mobile-icon.png?1');
+
+    set(layer[get(bottom_menu_btn_name)].crop, get(currcrop));
+
+    set(layer[get(bottom_menu_btn_name)].keep, true);
+
+    set(layer[get(bottom_menu_btn_name)].parent, get(bottom_menu_name));
+
+    set(layer[get(bottom_menu_btn_name)].html,get(bottom_menu[0].menu[get(i)].title));
+
+
+
+    set(layer[get(bottom_menu_btn_name)].type_id,get(bottom_menu[0].menu[get(i)].type_id));
+
+    set(layer[get(bottom_menu_btn_name)].data,get(bottom_menu[0].menu[get(i)].data));
+    set(layer[get(bottom_menu_btn_name)].datastr,get(bottom_menu[0].menu[get(i)].datastr));
+
+    set(layer[get(bottom_menu_btn_name)].datai,get(i));
+
+    set(layer[get(bottom_menu_btn_name)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr));skin_clear_menu_tips(get(type_id),get(datai)));
+
+
+
+
+
+    txtadd(bottom_menu_txt_name,'bottom_menu_txt_',get(i));
+
+    addlayer(get(bottom_menu_txt_name));
+
+    set(layer[get(bottom_menu_txt_name)].keep, true);
+
+    set(layer[get(bottom_menu_txt_name)].align, bottom);
+
+    set(layer[get(bottom_menu_txt_name)].width, 120);
+
+    set(layer[get(bottom_menu_txt_name)].height, 40);
+
+    set(layer[get(bottom_menu_txt_name)].html,get(bottom_menu[0].menu[get(i)].title));
+
+    set(layer[get(bottom_menu_txt_name)].parent, get(bottom_menu_name));
+
+
+
+    set(layer[get(bottom_menu_txt_name)].type_id,get(bottom_menu[0].menu[get(i)].type_id));
+
+    set(layer[get(bottom_menu_txt_name)].data,get(bottom_menu[0].menu[get(i)].data));
+    set(layer[get(bottom_menu_txt_name)].datastr,get(bottom_menu[0].menu[get(i)].datastr));
+
+    set(layer[get(bottom_menu_txt_name)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr));skin_clear_menu_tips(get(type_id),get(datai)));
+
+
+
+    layer[get(bottom_menu_name)].loadstyle('btn_over_style');
+
+    layer[get(bottom_menu_txt_name)].loadstyle(menubar_style);
+
+    );
+
+    );
+
+
+
+
+
+
+
+    set(layer[mode_con].x,get(mode_con_x));
+
+    set(layer[intro_con].x,get(intro_con_x));
+
+    set(layer[viewtype_con].x,get(viewtype_con_x));
+
+
+
+    if(menubarwidth !== null
+
+    ,
+
+    add(menubarwidth,140);
+
+    set(layer[skin_control_bar].width,get(menubarwidth));
+
+    ,
+
+    set(layer[skin_control_bar].width,get(skin_control_bar_w));
+
+    );
+
+
+
+    set(layer[skin_control_bar].visible,true);
+
+
+
+
+
+    set(music_con_y,50);
+
+    if(diy_right_menu_count != null
+
+    ,
+
+    for(set(k,0), k LT diy_right_menu_count, inc(k),
+
+    mul(rightmenuy,k,36);
+
+    mul(music_con_y,k,36);
+
+    txtadd(right_menu,'layer_right_menu',get(k));
+
+    addlayer(get(right_menu));
+
+    set(layer[get(right_menu)].parent, 'skin_right_menu_con');
+
+    set(layer[get(right_menu)].url,../plugins/textfield.swf);
+
+    set(layer[get(right_menu)].html,get(area_menu[0].menu[get(k)].title));
+
+    set(layer[get(right_menu)].enabled,true);
+
+    set(layer[get(right_menu)].alpha,1);
+
+    set(layer[get(right_menu)].align,top);
+
+    set(layer[get(right_menu)].width,80);
+
+    set(layer[get(right_menu)].bgroundedge,4);
+
+    set(layer[get(right_menu)].backgroundcolor,0x000000);
+
+    set(layer[get(right_menu)].backgroundalpha,0.4);
+
+    set(layer[get(right_menu)].padding,'5 8');
+
+    set(layer[get(right_menu)].css,'font-size: 13px;color: #FFFFFF;font-family: arial, 宋体;text-align:center; ');
+
+    set(layer[get(right_menu)].keep,true);
+
+    set(layer[get(right_menu)].x,0);
+
+    set(layer[get(right_menu)].y,get(rightmenuy));
+
+    set(layer[get(right_menu)].zorder,1);
+
+
+
+    set(layer[get(right_menu)].type_id,get(area_menu[0].menu[get(k)].type_id));
+
+    set(layer[get(right_menu)].data,get(area_menu[0].menu[get(k)].data));
+    set(layer[get(right_menu)].datastr,get(area_menu[0].menu[get(k)].datastr));
+
+    set(layer[get(right_menu)].onclick,skin_modal('menu',get(type_id),get(html),get(data),get(datastr)));
+
+    layer[get(right_menu)].loadstyle('btn_over_style');
+
+    );
+
+    set(layer[skin_right_menu_con].visible,true);
+
+
+
+
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    set(layer[skin_right_menu_con].y,34);
+
+    ,
+
+    set(layer[skin_right_menu_con].y,10);
+
+    );
+
+
+
+    add(music_con_y,50);
+
+    );
+
+
+
+    if(config.scroll_text !== null AND config.scroll_text != ""
+
+    ,
+
+    add(music_con_y,30);
+
+    );
+
+
+
+
+
+    set(layer[music_con].y,get(music_con_y));
+
+    if(config.bg_music_src !== null AND config.bg_music_src != "" AND config.mobile_bg_music !== null AND config.mobile_bg_music != '0'
+
+    ,
+
+    set(layer[music_con].visible,true);
+
+    );
+
+
+
+
+
+    if(config.show_comment == 0
+
+    ,
+
+    set(layer[say_con].visible,false);
+
+    set(layer[clearscreen_con].visible,false);
+
+    );
+
+
+
+
+
+    if(config.show_hit_like == 0
+
+    ,
+
+    set(layer[like_con].visible,false);
+
+    );
+
+
+
+    set(layer[skin_right_bottom_con].visible,true);
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="switchmode">
+
+    if(layer[mode_btn].opened == true
+
+    ,
+
+    set(view.limitview,lookat);
+
+    set(view.hlookatmin,-180);
+
+    set(view.hlookatmax,180);
+
+    set(view.vlookatmin,0);
+
+    set(view.vlookatmax,0);
+
+    set(layer[mode_btn].opened,false);
+
+    set(layer[mode_txt].html,720°);
+
+    ,
+
+    set(layer[mode_btn].opened,true);
+
+    littleinitview();
+
+    skin_loadscene(get(currscene));
+
+    set(layer[mode_txt].html,360°);
+
+    );
+
+    switch(layer[mode_btn].crop,102|0|102|104,102|104|102|104);
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_scrolltext">
+    if(layer[skin_scroll_text].scrolled == true
+    ,
+    txtadd(scrolltextwidth,"-","get(layer[skin_scroll_text_cont].width)");
+    inc(layer[skin_scroll_text_cont].x,1,get(stagewidth),get(scrolltextwidth));
+
+    delayedcall(0.005, skin_scrolltext(););
+
+    ,
+
+    set(layer[skin_scroll_text].scrolled,true);
+
+    set(layer[skin_scroll_text_cont].x,get(stagewidth));
+
+    set(layer[skin_scroll_text_cont].visible,true);
+
+    skin_scrolltext();
+
+    );
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_modal">
+
+
+
+
+
+    js(modalPano(%1,%2,%3,%4,%5));
+
+  </action>
+
+
+
+
+
+  <action devices="!mobile" name="skin_set_menu_icon">
+
+    if(bottom_menu[0].menu[%1].type_id == 1 ,
+    set(currcrop,'840|0|70|72');
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 2
+    ,
+    if(bottom_menu[0].menu[%1].is_tips == 1 ,
+    set(currcrop,'770|73|70|72');
+    ,
+    set(currcrop,'770|0|70|72');
+    );
+
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 3 , set(currcrop,'910|0|70|72');
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 8 , set(currcrop,'840|73|70|72');
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 10 , set(currcrop,'910|73|70|72');
+    , set(currcrop,'700|0|70|72');
+    );
+
+    );
+    );
+
+    );
+
+
+    );
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_set_menu_icon">
+
+
+
+    if(bottom_menu[0].menu[%1].type_id == 1 ,set(currcrop,'612|0|102|104');
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 2
+    ,
+    if(bottom_menu[0].menu[%1].is_tips == 1
+    ,
+    set(currcrop,'510|105|102|104');
+    ,
+    set(currcrop,'510|0|102|104');
+    );
+
+    ,
+
+    if(bottom_menu[0].menu[%1].type_id == 3
+    ,
+    set(currcrop,'714|0|102|104');
+    ,
+    <!--set(currcrop,'408|0|102|104');-->
+    if(bottom_menu[0].menu[%1].type_id == 8
+    ,
+    set(currcrop,'612|105|102|104');
+    ,
+    if(bottom_menu[0].menu[%1].type_id == 10
+    ,
+    set(currcrop,'714|105|102|104');
+    ,
+    set(currcrop,'408|0|102|104');
+    );
+    );
+    );
+
+    );
+
+    );
+
+  </action>
+
+
+
+
+
+  <action devices="!mobile" name="skin_clear_menu_tips">
+
+
+
+    if('%1' == '2'
+
+    ,
+
+    txtadd(bottom_menu_btn_names,'bottom_menu_btn_',%2);
+
+    set(layer[get(bottom_menu_btn_names)].crop, 770|0|70|72);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_clear_menu_tips">
+
+
+
+    if('%1' == '2'
+
+    ,
+
+    txtadd(bottom_menu_btn_names,'bottom_menu_btn_',%2);
+
+    set(layer[get(bottom_menu_btn_names)].crop, 510|0|102|104);
+
+    );
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_init_gyro">
+
+    if(skin_settings.gyro AND !device.desktop AND device.html5,
+
+    copy(plugin[skin_gyro].url, plugin[skin_gyro].html5_url);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_hide_ui">
+
+    tween(layer[skin_control_bar].y,-75,1,easeOutQuint,set(layer[skin_control_bar].visible,false));
+
+    set(layer[skin_right_menu_con].visible,false);
+
+    skin_showthumbs(false);
+
+    delayedcall(0.5,set(layer[showbar_con].visible,true));
+
+    js(hidePanoUi);
+
+    toggle_start_help(true);
+
+
+
+
+
+    set(layer[map_btn].visible,false);
+
+    skin_toggle_map(true);
+
+
+
+    <!--set(layer[skin_logo].visible,false);-->
+
+    <!--set(layer[skin_qrcode].visible,false);-->
+
+    set(layer[skin_nickname].visible,false);
+
+    set(layer[skin_hits].visible,false);
+
+    <!--set(layer[skin_scroll_text].visible,false);-->
+
+
+
+    set(layer[left_menu_container].visible,false);
+
+  </action>
+
+
+
+
+
+  <action name="skin_show_ui">
+
+    set(layer[skin_control_bar].visible,true);
+
+    tween(layer[skin_control_bar].y,0,1,easeOutQuint);
+
+    set(layer[showbar_con].visible,false);
+
+    set(layer[visituser].visible,true);
+
+    set(layer[skin_right_menu_con].visible,true);
+
+    skin_showthumbs(true);
+
+    js(showPanoUi);
+
+    if(scene_have_map != 'N/A',set(layer[map_btn].visible,true););
+
+
+
+    set(layer[skin_logo].visible,true);
+
+    <!--set(layer[skin_qrcode].visible,true);-->
+
+    set(layer[skin_hits].visible,true);
+
+    if(config.scroll_text !== null AND config.scroll_text != "",set(layer[skin_scroll_text].visible,true););
+
+
+
+    if(config.is_vip == '0' , set(layer[skin_nickname].visible,true); );
+
+    if(config.is_vip == '1' AND config.show_nickname == '1', set(layer[skin_nickname].visible,true); );
+
+    if(config.show_hit_like === null OR config.show_hit_like == '1', set(layer[skin_hits].visible,true););
+
+
+
+    if(have_scene_remark == true,set(layer[left_menu_container].visible,true););
+
+  </action>
+
+
+
+
+
+  <action devices="!mobile" name="skin_auto_next_scene">
+
+    if(config.pc_auto_scene == 1
+
+    ,
+
+    bombtimer(0);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_auto_next_scene">
+
+    if(config.mobile_auto_scene == 1
+
+    ,
+
+    bombtimer(0);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="bombtimer">
+
+    set(autorotate.enabled,true);
+
+    set(bt,%1);
+
+    add(bt,1);
+
+    delayedcall(1,bombtimer(get(bt)));
+
+    if(bt GE config.auto_scene_time
+
+    ,
+
+    set(bt,0);
+
+    skin_loop_scene();
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_loop_scene">
+
+    set(next_scene_index, get(scene[get(xml.scene)].index));
+
+    set(maxs, get(scene.count));
+
+    add(next_scene_index,1);
+
+    if(next_scene_index == maxs, set(next_scene_index,0));
+
+    skin_loadscene(get(scene[get(next_scene_index)].name));
+
+  </action>
+
+
+
+
+
+  <action name="add_bottom_ad">
+
+    if(scene[get(xml.scene)].bottom_ad_img != ""
+
+    ,
+
+    set(hotspot[hot_bottom_ad].visible,true);
+
+    set(hotspot[hot_bottom_ad].url,get(scene[get(xml.scene)].bottom_ad_img));
+
+    ,
+
+    set(hotspot[hot_bottom_ad].visible,false);
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="toggle_start_help">
+
+    if(config.start_img !== null AND config.start_img != "" AND config.start_img != "/statics/images/help.png"
+
+    ,
+
+    set(layer[skin_start_help].url,get(config.start_img));
+
+    if(device.mobile, set(layer[skin_start_help].scale,1.0););
+
+    );
+
+
+
+    if(layer[skin_start_help].visible || %1
+
+    ,
+
+    tween(layer[skin_start_help].alpha,0,1,easeOutQuint,removelayer(skin_start_help));
+
+    ,
+
+    set(layer[skin_start_help].visible,true);
+
+    )
+
+  </action>
+
+
+
+
+
+  <action name="comment_voice_animate">
+
+    inc(frame,1,get(lastframe),0);
+
+    mul(ypos,frame,frameheight);
+
+    txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+
+    delayedcall(0.6, if(loaded, comment_voice_animate() ) );
+
+  </action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <action name="skin_play_music">
+
+    txtadd(comment_voice,'comment_voice_',get(current_commet_id));
+    txtadd(comment_voice_playing,'comment_voice_playing_',get(current_commet_id));
+    set(layer[get(comment_voice)].visible,true);
+    set(layer[get(comment_voice_playing)].visible,false);
+
+    stopsound(comment);
+
+    if('%1' == 'bgmusic'
+    ,
+    <!--场景音乐-->
+    if(scene[get(xml.scene)].bgmusic,
+    set(current_music, get(scene[get(xml.scene)].bgmusic));
+    ,
+    set(current_music,get(config.bg_music_src));
+    );
+    ,
+    stopsound(bgmusic);
+    set(current_music,%2);
+    set(current_commet_id,%3);
+    set(layer[music_con].playing,flase);
+    );
+
+
+
+    if(get(layer[music_con].playing)
+    ,
+    set(layer[music_con].playing,false);
+    if('%1' == 'bgmusic'
+    ,
+    set(layer[snd].crop,get(theme_config.music_crop_curr));
+    stopsound(%1);
+    ,
+    set(layer[comment_voice_%3].visible,true);
+    set(layer[comment_voice_playing_%3].visible,false);
+    );
+    ,
+    set(layer[music_con].playing,true);
+    if('%1' == 'bgmusic'
+    ,
+    set(layer[snd].crop,get(theme_config.music_crop_def));
+    playsound(%1,get(current_music), 0);
+    ,
+    set(layer[comment_voice_%3].visible,false);
+    set(layer[comment_voice_playing_%3].visible,true);
+    playsound(%1,get(current_music),1,palyend_comment_voice(%3));
+    );
+
+    );
+
+
+
+  </action>
+
+
+
+
+
+  <action name="palyend_comment_voice">
+
+    set(layer[comment_voice_%1].visible,true);
+
+    set(layer[comment_voice_playing_%1].visible,false);
+
+    set(layer[music_con].playing,false);
+
+    if(config.pc_bg_music == '1'
+
+    ,
+
+    skin_play_music(bgmusic);
+
+    );
+    set(current_commet_id,-1);
+
+  </action>
+
+
+
+
+
+  <action name="skin_load_index_scene">
+
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+
+    if(newsceneindex GE 0 AND newsceneindex LT scene.count,
+
+    layer[skin_thumbs].scrolltocenter(get(scene[get(newsceneindex)].thumbx), get(scene[get(newsceneindex)].thumby));
+
+    skin_loadscene(get(scene[get(newsceneindex)].name));
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_nextscene_loop">
+
+    add(newsceneindex, scene[get(xml.scene)].index, %1);
+
+    sub(lastsceneindex, scene.count, 1);
+
+    if(newsceneindex LT 0, copy(newsceneindex,lastsceneindex));
+
+    if(newsceneindex GT lastsceneindex, set(newsceneindex,0));
+
+    layer[skin_thumbs].scrolltocenter(get(scene[get(newsceneindex)].thumbx), get(scene[get(newsceneindex)].thumby));
+
+    loadscene(get(scene[get(newsceneindex)].name));
+
+    set(currscene,get(scene[get(newsceneindex)].name));set(panoflag,get(alwayspanoflag));
+
+  </action>
+
+
+
+
+
+  <action name="skin_startup">
+    skin_init_gyro();
+    set(last_view_scene_index,0);
+    set(first_loaded_scene,true);
+    add_bottom_ad();
+    skin_addthumbs();
+  </action>
+
+
+
+
+
+  <action name="skin_addhotspot">
+
+    js(addSceneHotspot(get(xml.scene)));
+
+  </action>
+
+
+
+
+
+  <action name="skin_addthumbs_noalbum">
+
+
+
+    if(skin_settings.thumbs == false,
+
+    set(layer[skin_btn_thumbs].visible,false);
+
+    ,
+
+    mul(skin_thumbs_width, 90, scene.count);
+
+
+
+
+
+    copy(layer[skin_thumbs].width, skin_thumbs_width);
+
+
+
+    for(set(i,0), i LT scene.count, inc(i),
+
+
+
+    skin_create_thumb(get(i));
+
+    );
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_addthumbs">
+
+
+
+    if(scene[0].album
+    ,
+
+    set(config.group,true);
+
+    set(count_group,0);
+
+    for(set(i,0), i LT scene.count, inc(i),
+
+    if(scene[get(i)].album !== null
+    ,
+
+    txtadd(group_btn,'group_btn_',get(count_group));
+
+    addlayer(get(group_btn));
+    mul(group_btn_x,90,get(count_group));
+
+    add(group_btn_x,10);
+    set(layer[get(group_btn)].parent, skin_group);
+    set(layer[get(group_btn)].width, 80);
+    set(layer[get(group_btn)].height, 30);
+    set(layer[get(group_btn)].group, get(count_group));
+    set(layer[get(group_btn)].x, get(group_btn_x));
+    layer[get(group_btn)].loadstyle(group_btn_style|btn_over_style);
+
+    set(layer[get(group_btn)].onclick, skin_show_group_thumbs(get(group),1););
+
+    txtadd(group_btn_text,'group_btn_text_',get(count_group));
+    addlayer(get(group_btn_text));
+    set(layer[get(group_btn_text)].parent, get(group_btn));
+    set(layer[get(group_btn_text)].handcursor, true);
+    set(layer[get(group_btn_text)].html, get(scene[get(i)].album));
+    layer[get(group_btn_text)].loadstyle(group_btn_text_style);
+    add(count_group, count_group, 1);
+
+    );
+
+    );
+
+    set(config.count_group,get(count_group));
+    mul(skin_group_width, 90, get(count_group));
+    copy(layer[skin_group].width, skin_group_width);
+
+    for(set(i,0), i LT scene.count, inc(i),
+    skin_create_thumb(get(i));
+    txtadd(thumb_img,'thumb_img_',get(i));
+    set(layer[get(thumb_img)].visible,false);
+
+    );
+
+    skin_show_group_thumbs(0);
+    ,
+    skin_addthumbs_noalbum();
+
+    );
+
+
+
+    if(device.mobile,set(layer[skin_scroll_window].y,104););
+
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_show_group_thumbs">
+
+    set(temp_count_group,0);
+    set(temp_thumb_i,0);
+    for(set(i,0), i LT scene.count, inc(i),
+    if(scene[get(i)].album !== null
+    ,
+    txtadd(temp_group_btn,'group_btn_',get(temp_count_group));
+    txtadd(temp_group_btn_text,'group_btn_text_',get(temp_count_group));
+    set(layer[get(temp_group_btn)].crop, 0|0|80|30);
+
+    set(layer[get(temp_group_btn_text)].css, text-align:center;color:#333);
+
+    add(temp_count_group, temp_count_group, 1);
+    <!--trace(temp_count_group);-->
+    );
+
+    if(scene[get(i)].group == %1
+    ,
+    txtadd(thumb_img,'thumb_img_',get(i));
+    set(layer[get(thumb_img)].visible,true);
+    mul(thumb_x,get(temp_thumb_i), 90);
+    add(thumb_x, 10);
+
+
+
+    copy(layer[get(thumb_img)].x, thumb_x);
+
+    if(temp_thumb_i EQ 0 AND %2 == 1,
+
+    skin_loadscene(get(scene[get(i)].name),1);
+    );
+
+    add(temp_thumb_i,temp_thumb_i,1);
+    ,
+
+    txtadd(thumb_img,'thumb_img_',get(i));
+    set(layer[get(thumb_img)].visible,false);
+
+    );
+    );
+
+    mul(skin_thumbs_width, 90, get(temp_thumb_i));
+    copy(layer[skin_thumbs].width, skin_thumbs_width);
+    set(layer[group_btn_%1].crop, 82|0|80|30);
+    set(layer[group_btn_text_%1].css, text-align:center;color:#ffffff);
+
+  </action>
+
+
+
+
+
+  <action name="skin_create_thumb">
+
+    copy(thumb_width, skin_settings.thumbs_width);
+    copy(thumb_height, skin_settings.thumbs_height);
+    copy(thumb_padding, skin_settings.thumbs_padding);
+    add(thumbx_offset, thumb_width, thumb_padding);
+
+    txtadd(thumb_img,'thumb_img_',%1);
+    addlayer(get(thumb_img));
+
+    if(%2 != null,mul(thumb_x, %2, thumbx_offset);,mul(thumb_x, %1, thumbx_offset););
+
+    add(thumb_x, thumb_padding);
+
+    copy(layer[get(thumb_img)].x, thumb_x);
+    set(layer[get(thumb_img)].parent, skin_thumbs);
+    copy(layer[get(thumb_img)].url, scene[%1].thumburl);
+    layer[get(thumb_img)].loadstyle(thumb_img_style);
+
+
+
+    txtadd(thumb_bg,'thumb_bg_',%1);
+    addlayer(get(thumb_bg));
+    set(layer[get(thumb_bg)].parent, get(thumb_img));
+    layer[get(thumb_bg)].loadstyle(thumb_bg_style);
+    set(layer[get(thumb_bg)].linkedscene, get(scene[get(i)].name));
+
+    set(layer[get(thumb_bg)].onclick,
+    skin_loadscene(get(linkedscene));
+    js(showUrlAddress(get(linkedscene)));
+    );
+
+
+
+
+
+    txtadd(thumb_title_bg, 'skin_thumb_title_bg', %1);
+
+    addlayer(get(thumb_title_bg));
+    layer[get(thumb_title_bg)].loadstyle(skin_thumb_title_bg_style);
+    set(layer[get(thumb_title_bg)].parent, get(thumb_img));
+    set(layer[get(thumb_title_bg)].linkedscene, get(scene[get(i)].name));
+
+    set(layer[get(thumb_title_bg)].onclick,
+    skin_loadscene(get(linkedscene));
+    );
+
+    txtadd(thumb_title, 'skin_thumb_title_',%1);
+
+    addlayer(get(thumb_title));
+    layer[get(thumb_title)].loadstyle(skin_thumb_title_style);
+    set(layer[get(thumb_title)].parent, get(thumb_title_bg));
+    set(layer[get(thumb_title)].html, get(scene[%1].title));
+
+    txtadd(current_thumb,'current_thumb_',%1);
+    addlayer(get(current_thumb));
+
+    set(layer[get(current_thumb)].url,'krpano/images/skin1/20161111-pc-icon.png');
+
+    set(layer[get(current_thumb)].crop,'160|190|14|14');
+
+    set(layer[get(current_thumb)].keep,true);
+    set(layer[get(current_thumb)].parent, get(thumb_img));
+    set(layer[get(current_thumb)].align, righttop);
+    set(layer[get(current_thumb)].x,4);
+    set(layer[get(current_thumb)].y,4);
+
+    set(layer[get(current_thumb)].visible,false);
+
+  </action>
+
+
+
+
+
+  <action name="skin_showthumbs">
+
+    if(%1 == null, if(layer[skin_thumbs].state == 'closed', set(show,true), set(show,false)); , set(show,%1); );
+
+    mul(mh, layer[skin_scroll_layer].pixelheight, -1);
+
+    if(layer[skin_scroll_layer].y == -100%, copy(layer[skin_scroll_layer].y,mh));
+
+    if(show,
+
+    set(layer[skin_thumbs].state, 'opened');
+
+    add(mh, layer[skin_thumbs].height);
+
+    tween(layer[skin_scroll_layer].y, get(mh), 0.5, easeOutQuint);
+
+    set(layer[skin_thumbs_container].visible, true);
+
+    tween(layer[skin_thumbs_container].alpha, 1.0, 0.25);
+
+    set(layer[skin_scroll_container].visible,true);
+
+
+
+    if(config.group,set(layer[skin_group_container].visible, true);set(layer[skin_group].visible, true););
+
+
+
+
+
+    if(config.show_hit_like === null OR config.show_hit_like == 1
+
+    ,
+
+    set(layer[skin_right_bottom_con].y,226);
+
+    );
+
+    ,
+
+    set(layer[skin_thumbs].state, 'closed');
+
+    tween(layer[skin_scroll_layer].y, get(mh), 0.5, easeOutQuint, set(layer[skin_thumbs_container].visible, false);set(layer[skin_scroll_container].visible,false););
+
+
+
+    if(config.group,set(layer[skin_group_container].visible, false);set(layer[skin_group].visible, false););
+
+
+
+
+
+    if(config.show_hit_like === null OR config.show_hit_like == 1
+
+    ,
+
+    set(layer[skin_right_bottom_con].y,120);
+
+    );
+
+    );
+    delayedcall(3,initnavplay());
+  </action>
+
+
+
+
+
+
+
+  <action name="skin_toggle_map">
+
+    if(map_opened OR %1
+
+    ,
+
+    set(layer[map_btn].opened,false);
+
+    set(layer[map_floor_container].visible,false);
+
+    tween(layer[map_container].x, -450, 1, easeOutQuint);
+
+    skin_map_hide_ui();
+
+    ,
+
+    set(layer[map_btn].opened,true);
+
+    set(layer[map_floor_container].visible,true);
+    
+    set(leftmenu_count,get(area_menu[0].menu.count));
+    if(config.map_top == '1' AND  leftmenu_count == null,
+    
+      tween(layer[map_container].x, 5, 1, easeOutQuint);
+      ,
+      tween(layer[map_container].x, 95, 1, easeOutQuint);
+    );
+
+    set(layer[map_container].visible,true);
+
+    skin_map_hide_ui(1);
+
+    );
+
+    set(map_opened,get(layer[map_btn].opened));
+
+  </action>
+
+
+
+
+
+  <action devices="mobile" name="skin_zoom_map_ui">
+
+    if(%1 !== null
+
+    ,
+
+    tween(layer[skin_control_bar].y,-75,1,easeOutQuint,set(layer[skin_control_bar].visible,false));
+
+    set(layer[skin_right_menu_con].visible,false);
+
+    skin_showthumbs(false);
+
+    js(hidePanoUi);
+
+    toggle_start_help(true);
+
+    set(layer[left_menu_container].visible,false);
+
+    ,
+
+    set(layer[skin_control_bar].visible,true);
+
+    tween(layer[skin_control_bar].y,0,1,easeOutQuint);
+
+    set(layer[skin_right_menu_con].visible,true);
+
+    js(showPanoUi);
+
+    if(have_scene_remark == true,set(layer[left_menu_container].visible,true););
+
+    );
+
+  </action>
+
+  <action devices="!mobile" name="skin_zoom_map_ui"></action>
+
+
+
+
+
+  <action devices="mobile" name="skin_map_hide_ui">
+
+    if(%1 !== null
+
+    ,
+
+    skin_showthumbs(false);
+
+    set(layer[skin_right_bottom_con].visible,false);
+
+    ,
+
+    skin_showthumbs(true);
+
+    set(layer[skin_right_bottom_con].visible,true);
+
+    );
+
+  </action>
+
+  <action devices="!mobile" name="skin_map_hide_ui"></action>
+
+
+
+
+
+
+
+
+
+  <action name="skin_zoom_map">
+
+    skin_show_mask();
+
+    set(layer[map_container].zoomed, true);
+
+    set(layer[map_container].zorder, 10000);
+
+    set(layer[map_zoom_btn].visible, false);
+
+    set(layer[modal_layer_close].onclick, skin_close_zoom_map());
+
+    skin_zoom_map_ui(true);
+
+    skin_load_map(get(currfloorindex));
+
+  </action>
+
+
+
+
+
+  <action name="skin_close_zoom_map">
+
+    set(layer[map_container].zoomed, false);
+
+    set(layer[map_zoom_btn].visible, true);
+
+    skin_hide_mask();
+
+    skin_zoom_map_ui();
+
+    skin_load_map(get(currfloorindex));
+
+
+
+  </action>
+
+
+
+
+
+  <action name="skin_init_map">
+
+
+    set(map_floor_count,get(maps[0].map.count));
+
+
+
+    set(scene_have_map,get(scene[get(currscene)].mapid));
+
+
+
+    set(currfloorindex,0);
+
+
+
+
+
+    if(map_floor_count GE 2
+
+    ,
+
+    for(set(floori,0),floori LT map_floor_count,inc(floori),
+
+    txtadd(floorname,'floor_',get(floori));
+
+    addlayer(get(floorname));
+
+    set(layer[get(floorname)].parent,map_floor_container);
+
+    set(layer[get(floorname)].align,top);
+
+    if(device.mobile,set(layer[get(floorname)].scale,1.2););
+
+    set(layer[get(floorname)].keep,true);
+
+    set(layer[get(floorname)].url,'../images/skin1/20161111-pc-icon.png');
+
+    set(layer[get(floorname)].crop,0|260|70|24);
+
+    set(layer[get(floorname)].width,70);
+
+    set(layer[get(floorname)].height,24);
+
+    if(device.mobile,mul(floory,40,get(floori));,mul(floory,32,get(floori)););
+
+    set(layer[get(floorname)].y,get(floory));
+
+
+
+    txtadd(txt_floorname,'text_floor',get(floori));
+
+    addlayer(get(txt_floorname));
+
+    set(layer[get(txt_floorname)].parent, get(floorname));
+
+    set(layer[get(txt_floorname)].width, 70);
+
+    set(layer[get(txt_floorname)].height, 24);
+
+    set(layer[get(txt_floorname)].vcenter,true);
+
+    set(layer[get(txt_floorname)].html, get(maps[0].map[get(floori)].map_name));
+
+    set(layer[get(txt_floorname)].flooriii, get(floori));
+
+
+
+    set(layer[get(txt_floorname)].onclick,skin_click_floor(get(flooriii)););
+
+
+
+
+
+    if(scene[get(currscene)].mapid == floori
+
+    ,
+
+    layer[get(txt_floorname)].loadstyle(current_text_style);
+
+    ,
+
+    layer[get(txt_floorname)].loadstyle(public_text_style);
+
+    );
+
+    );
+
+    tween(layer[map_floor_container].x, 7, 1, easeOutQuint);
+
+    );
+
+
+
+
+
+    for(set(i,0),i LT pointcount,inc(i),
+
+    txtadd(mapspotname,'mapspot_',get(i));
+
+    removelayer(get(mapspotname));
+
+    );
+
+
+
+
+    if(scene_have_map != 'N/A'
+
+    ,
+
+    if(!webvr.isenabled,set(layer[map_btn].visible,true););
+
+    skin_load_map(get(scene[get(currscene)].mapid));
+
+    ,
+
+    set(layer[map_btn].visible,false);
+
+    );
+
+
+
+
+
+  </action>
+
+
+
+
+
+  <action name="skin_click_floor">
+
+
+
+    for(set(floori,0),floori LT map_floor_count,inc(floori),
+
+    txtadd(txt_floorname,'text_floor',get(floori));
+
+    if(%1 == floori
+
+    ,
+
+    layer[get(txt_floorname)].loadstyle(current_text_style);
+
+    ,
+
+    layer[get(txt_floorname)].loadstyle(public_text_style);
+
+    );
+
+    );
+
+    set(layer[radar].visible, false);
+
+
+
+
+
+    for(set(i,0),i LT pointcount,inc(i),
+
+    txtadd(mapspotname,'mapspot_',get(i));
+
+    removelayer(get(mapspotname));
+
+    );
+
+    skin_load_map(%1,true);
+
+  </action>
+
+
+
+
+
+  <action name="skin_load_map">
+    <!--set(layer[map_container].zoomed, false);-->
+    set(map_is_zoomed,get(layer[map_container].zoomed));
+
+    set(layer[mapImage].url,get(maps[0].map[%1].images));
+
+
+
+    set(pointcount,get(maps[0].map[%1].map_point.count));
+
+    set(currfloorindex,%1);
+
+    set(mapimgheight,get(maps[0].map[%1].height));
+
+    set(mapimgwidth,get(maps[0].map[%1].width));
+
+    set(curr_map_image_width,get(mapimgwidth));
+
+    set(curr_map_image_height,get(mapimgheight));
+
+
+
+
+
+    if(device.mobile
+    ,
+      if(map_is_zoomed
+
+      ,
+      copy(mapmaxsize,stagewidth);
+      sub(mapmaxsize,20);
+      ,
+      copy(mapmaxsize,stagewidth);
+      sub(mapmaxsize,180);
+
+      );
+    ,
+      if(map_is_zoomed
+      ,
+      if(mapimgwidth GT mapimgheight,
+      copy(mapmaxsize,mapimgwidth);
+      ,
+      copy(mapmaxsize,mapimgheight);
+      );
+      ,
+      set(mapmaxsize,400);
+      );
+    );
+    
+
+    <!--if(mapimgheight LT 400 ,
+    set(layer[mapImage].height,400);
+    set(mapimgheight,400);
+    );-->
+
+    div(mapimgscale,mapimgwidth,mapimgheight);
+
+
+
+
+    if(mapimgwidth GE mapimgheight
+    ,
+    div(pointscale,mapmaxsize,mapimgwidth);
+    <!--if(mapimgwidth GE mapmaxsize
+      ,-->
+
+        set(layer[mapImage].width,get(mapmaxsize));
+        div(mapimgheight1,mapmaxsize,mapimgscale);
+        set(layer[mapImage].height,get(mapimgheight1));
+        <!--,
+
+        set(mapimgscale,1.0);
+        set(layer[mapImage].width,mapimgwidth);
+        set(layer[mapImage].height,mapimgheight);
+        div(mapimgheight1,layer[mapImage].height);
+
+      );-->
+
+      sub(mapImageyy,layer[mapImage].height,45);
+
+      div(mapImageyy,2);
+      sub(mapImageyy,20);
+      if(!device.mobile
+      ,
+      set(layer[map_container].y,get(mapImageyy));
+      );
+    ,
+      div(pointscale,mapmaxsize,mapimgheight);
+      if(mapimgheight GE mapmaxsize
+      ,
+      set(layer[mapImage].height,get(mapmaxsize));
+      mul(mapimgwidth1,mapmaxsize,mapimgscale);
+      set(layer[mapImage].width,get(mapimgwidth1));
+
+      );
+
+      sub(mapImagey,layer[mapImage].height,45);
+      div(mapImagey,2);
+      sub(mapImagey,197);
+      if(!device.mobile
+      ,
+      set(layer[map_container].y,get(mapImagey));
+      );
+
+    );
+
+
+    set(layer[map_container].width,get(layer[mapImage].width));
+
+    set(layer[map_container].height,get(layer[mapImage].height));
+
+
+    <!--if(layer[mapImage].height == null,
+    set(layer[mapImage].width,400);
+    set(layer[mapImage].height,400);
+    );-->
+
+    set(map_zoom_btn_y,get(layer[mapImage].height));
+
+    div(map_zoom_btn_y,2);
+
+    add(map_zoom_btn_y,24);
+
+
+
+    set(layer[map_zoom_btn].y,get(map_zoom_btn_y));
+
+
+
+
+    skin_set_point(%1,pointscale);
+
+
+
+    if(map_is_zoomed
+
+    ,
+
+    layer[map_container].changeorigin(center,center);
+
+    tween(layer[map_container].x, 0);
+
+    <!--if(!device.mobile
+    ,-->
+    tween(layer[map_container].y, 0);
+    <!--);-->
+
+    ,
+
+    set(layer[map_container].x,95);
+    
+    if(device.mobile
+    ,
+    layer[map_container].changeorigin(righttop,right);
+    set(layer[map_container].y,180);
+    ,
+      if(config.map_top == 0,
+        layer[map_container].changeorigin(right,right);
+        set(layer[map_container].y,0);
+        
+       ,
+        layer[map_container].changeorigin(righttop,right);
+        set(layer[map_container].y,200);
+        
+       
+      )
+    );
+    
+     set(layer[map_container].x,95);
+    
+
+    );
+
+
+
+    if(map_opened
+
+    ,
+
+    set(layer[map_container].visible,true);
+
+    ,
+
+    set(layer[map_container].visible,false);
+
+    );
+
+    if(%2 !== null
+
+    ,
+
+    skin_loadscene(get(maps[0].map[%1].map_point[0].scene_id));
+
+    );
+
+    <!--trace(get(layer[mapImage].url));
+    trace(get(layer[mapImage].width));-->
+
+  </action>
+
+
+
+
+
+  <action name="skin_set_point">
+
+    for(set(mapi,0),mapi LT pointcount,inc(mapi),
+
+    txtadd(mapspotname,'mapspot_',get(mapi));
+
+    addlayer(get(mapspotname));
+
+    set(layer[get(mapspotname)].parent,radarmask);
+
+    set(layer[get(mapspotname)].align,lefttop);
+
+    set(layer[get(mapspotname)].edge,center);
+
+    set(layer[get(mapspotname)].keep,true);
+
+    set(layer[get(mapspotname)].title,get(maps[0].map[%1].map_point[get(mapi)].scene_name));
+
+    set(layer[get(mapspotname)].onhover,showtext(get(title)));
+
+    mul(paddX, %2, 25);
+    mul(paddY, %2, 25);
+
+
+    mul(mapspotx,%2,maps[0].map[%1].map_point[get(mapi)].x);
+
+
+    add(mapspotx,get(paddX));
+
+    mul(mapspoty,%2,maps[0].map[%1].map_point[get(mapi)].y);
+
+    add(mapspoty,get(paddY));
+
+    set(layer[get(mapspotname)].x,get(mapspotx));
+
+    set(layer[get(mapspotname)].y,get(mapspoty));
+
+    set(layer[get(mapspotname)].url,'krpano/images/skin1/map-point.png');
+
+    set(layer[get(mapspotname)].floor,get(maps[0].map[%1].id));
+
+    set(layer[get(mapspotname)].zorder,2);
+
+    if(currscene == maps[0].map[%1].map_point[get(mapi)].scene_id
+
+    ,
+
+    skin_set_radar(get(maps[0].map[%1].map_point[get(mapi)].degrees),get(mapspotx),get(mapspoty));
+
+    set(layer[get(mapspotname)].crop,40|0|20|20);
+
+    ,
+
+    set(layer[get(mapspotname)].crop,0|0|20|20);
+
+    );
+
+    set(layer[get(mapspotname)].mapii,get(mapi));
+
+    set(layer[get(mapspotname)].islinkedscene,get(maps[0].map[%1].map_point[get(mapi)].scene_id));
+
+    set(layer[get(mapspotname)].onclick,
+
+    ifnot(currscene == maps[0].map[%1].map_point[get(mapii)].scene_id
+
+    ,
+
+    skin_loadscene(get(islinkedscene));
+
+    );
+
+
+
+    );
+
+    );
+
+  </action>
+
+
+
+  <action name="skin_set_radar">
+
+    set(layer[radar].heading, %1);
+
+    set(layer[radar].x, %2);
+
+    set(layer[radar].y, %3);
+
+    set(layer[radar].visible, true);
+
+  </action>
+
+
+
+
+
+  <action name="skin_thumb_current">
+
+    set(layer[current_thumb_%1].visible,true);
+
+
+
+  </action>
+
+
+
+  <action name="skin_updatescroll">
+
+    if(layer[skin_thumbs].loaded,
+
+    set(cursceneindex, 0);
+
+    if(xml.scene, copy(cursceneindex, scene[get(xml.scene)].index));
+
+    layer[skin_thumbs].setcenter(get(scene[get(cursceneindex)].thumbx), get(scene[get(cursceneindex)].thumby));
+
+    );
+
+  </action>
+
+
+
+  <action name="skin_updatethumbscroll">
+
+    copy(padding,skin_settings.thumbs_padding);
+
+    if(skin_settings.thumbs_scrollindicator,
+
+    if(woverflow GT 0,
+
+    set(layer[skin_thumbs_scrollindicator].visible,true);
+
+    sub(iw,pixelwidth,woverflow);
+
+    div(pw,iw,pixelwidth);
+
+    div(px,loverflow,woverflow);
+
+    mul(pw,iw);
+
+    copy(layer[skin_thumbs_scrollindicator].width,pw);
+
+    sub(iw,pw);
+
+    sub(iw,padding);
+
+    sub(iw,padding);
+
+    mul(px,iw);
+
+    add(px,padding);
+
+    copy(layer[skin_thumbs_scrollindicator].x,px);
+
+    ,
+
+    set(layer[skin_thumbs_scrollindicator].visible,false);
+
+    );
+
+    );
+
+  </action>
+
+
+
+  <action name="skin_update_scene_infos">
+
+    if(xml.scene !== null,
+
+    if(scene[get(xml.scene)].index GE 0,
+
+    if(title, txtadd(layer[skin_title].html, get(title), ' - ', get(scene[get(xml.scene)].title) ); , copy(layer[skin_title].html, scene[get(xml.scene)].title ); );
+
+
+
+
+
+    for(set(i,0), i LT scene.count, inc(i),
+
+    txtadd(current_thumb,'thumb_bg_',get(i));
+
+    set(layer[get(current_thumb)].crop,0|0|80|80);
+
+    );
+
+
+
+    txtadd(current_thumb, 'thumb_bg_', get(scene[get(xml.scene)].index));
+
+    set(layer[get(current_thumb)].crop,80|0|80|80);
+
+
+
+    if(scene[get(xml.scene)].index GT 0,
+
+    set(layer[skin_btn_prev].enabled, true);
+
+    set(layer[skin_btn_prev].alpha, 1.0);
+
+    ,
+
+    set(layer[skin_btn_prev].enabled, false);
+
+    set(layer[skin_btn_prev].alpha, 0.3);
+
+    );
+
+    sub(lastsceneindex, scene.count, 1);
+
+    if(scene[get(xml.scene)].index LT lastsceneindex,
+
+    set(layer[skin_btn_next].enabled, true);
+
+    set(layer[skin_btn_next].alpha, 1.0);
+
+    ,
+
+    set(layer[skin_btn_next].enabled, false);
+
+    set(layer[skin_btn_next].alpha, 0.3);
+
+    );
+
+    );
+
+    );
+
+  </action>
+
+
+
+
+
+  <action name="skin_onresize">
+
+    mul(mh, area.pixelheight, -1);
+
+    if(layer[skin_thumbs].state == 'opened', add(mh,layer[skin_thumbs].height); );
+
+    copy(destwidth, stagewidth);
+
+    copy(destheight, stageheight);
+
+    set(layer[itemimgpic].width,get(ww));
+
+    set(layer[itemimgpic].height,get(hh));
+
+    set(layer[skin_scroll_layer].y, get(mh));
+
+  </action>
+
+
+
+
+
+  <events name="skin_events" keep="true"
+
+      onxmlcomplete="set(events[skin_events].onxmlcomplete,null); skin_startup();"
+
+      onnewpano="skin_showloading(true); skin_update_scene_infos();"
+
+      onresize="skin_onresize();"
+
+      onloadcomplete="js(showLodingUi());skin_loaded();"
+
+      onclick="skin_click();"
+
+      onmousedown="skin_muouse_down();"
+
+      onmouseup="skin_muouse_up();"
+
+    />
+
+
+
+  <!-- 表盘不动 表针动 -->
+
+  <layer name="compass1" url="%SWFPATH%/plugins/compass/compass_bg.png" visible="false" keep="true" align="lefttop" x="10" y="100" children="false" scalechildren="true" destscale="1.0" onclick="switch(destscale,1.0,0.5);tween(scale,get(destscale));">
+    <!--<layer name="compass1_plate"   url="%SWFPATH%/plugins/compass/compass_plate.png" keep="true"    align="center"  zorder="1" />-->
+    <layer name="compass1_pointer" url="%SWFPATH%/plugins/compass/compass_pointer.png" keep="true"  align="center"  zorder="2" />
+    <!--<layer name="compass1_ring"    url="%SWFPATH%/plugins/compass/compass_ring.png"  keep="true"   align="lefttop" zorder="3" />-->
+  </layer>
+
+
+  <!-- 更新指南针旋转数值 -->
+  <action name="compass_update_rotate">
+    set(layer[compass1].visible,get(config.iscompass));
+
+    copy(compassy, config.logo_height);
+    add(compassy, 90);
+    set(layer[compass1].y, get(compassy));
+    <!--set(global_heading, 180);
+    calc(plugin[compass1_pointer].rotate, view.hlookat - global_heading);-->
+    calc(plugin[compass1_pointer].rotate, view.hlookat - scene[get(xml.scene)].compassrotate);
+  </action>
+
+
+</krpano>

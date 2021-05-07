@@ -1,0 +1,175 @@
+<krpano onstart="startup();">
+  <action name="do_crop_animation">
+    <!-- add attributes to the hotspot -->
+    registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+    registerattribute(yframes, calc((imageheight / %2) BOR 0));
+    registerattribute(frames, calc(xframes * yframes));
+    registerattribute(frame, 0);
+
+    set(crop, '0|0|%1|%2');
+
+    setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+      if(loaded,
+          inc(frame);
+          if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0);clearinterval(calc('crop_anim_' + name)); );
+          mod(xpos, frame, xframes);
+          div(ypos, frame, xframes);
+          Math.floor(ypos);
+          mul(xpos, %1);
+          mul(ypos, %2);
+          calc(crop, xpos + '|' + ypos + '|%1|%2');
+
+          set(hotspot[%5].ath,get(hotspot[%4].ath));
+          set(hotspot[%5].atv,get(hotspot[%4].atv));
+
+        ,
+          clearinterval(calc('crop_anim_' + name));
+        );
+    );
+  </action>
+
+  <style name="scroll_text_style1" css="text-align:center;font-family:黑体; font-size:13px; color:#00ff00;letter-spacing:2px;" url="../plugins/textfield.swf" align="left" autowidth="true" autoheight="auto" />
+
+  <layer name="skin_scroll_text1" handcursor="false" scrolled="false" type="container" y="24" align="top" width="100%" height="22" bgcolor="0x000000" bgalpha="0.2" visible="false" keep="true">
+
+    <layer visible="false" name="skin_scroll_text_cont1" handcursor="false" style="scroll_text_style1" backgroundalpha="0.0" x="0" y="0" html="" />
+
+  </layer>
+
+  <style name="scroll_text_style2" css="text-align:center;font-family:黑体; font-size:13px; color:#ffea00;letter-spacing:2px;" url="../plugins/textfield.swf" align="right" autowidth="true" autoheight="auto" />
+
+  <layer name="skin_scroll_text2" handcursor="false" scrolled="false" type="container" y="210" align="bottom" width="100%" height="22" bgcolor="0x000000" bgalpha="0.2" visible="false" keep="true">
+
+    <layer visible="false" name="skin_scroll_text_cont2" handcursor="false" style="scroll_text_style2" backgroundalpha="0.0" x="0" y="0" html="" />
+
+  </layer>
+
+  <include url="../xml/viewskin.xml?530524"/>
+  <include url="../xml/skin1_new.xml?523124"/>
+  <include url="../xml/object.xml?523124"/>
+  <include url="../xml/shop.xml?523124"/>
+  <include url="../xml/objectshop.xml?523124"/>
+
+  <action name="skin_init_adleft">
+
+    set(layer[skin_scroll_text1].visible,true);
+    set(layer[skin_scroll_text_cont1].html,%1);
+    skin_scrolltext1();
+  </action>
+
+  <action name="skin_scrolltext1">
+    
+    if(layer[skin_scroll_text1].scrolled == true
+    ,
+        txtadd(scrolltextwidth,"-","get(layer[skin_scroll_text_cont1].width)");
+        inc(layer[skin_scroll_text_cont1].x,1,get(stagewidth),get(scrolltextwidth));
+        delayedcall(0.01, skin_scrolltext1(););
+    ,
+        set(layer[skin_scroll_text1].scrolled,true);
+        set(layer[skin_scroll_text_cont1].x,get(stagewidth));
+        set(layer[skin_scroll_text_cont1].visible,true);
+        skin_scrolltext1();
+    );
+
+  </action>
+
+
+  <action name="skin_init_adright">
+
+    set(layer[skin_scroll_text2].visible,true);
+    set(layer[skin_scroll_text_cont2].html,%1);
+    skin_scrolltext2();
+  </action>
+
+  <action name="skin_scrolltext2">
+
+    if(layer[skin_scroll_text2].scrolled == true
+    ,
+    txtadd(scrolltextwidth,"-","get(layer[skin_scroll_text_cont2].width)");
+    inc(layer[skin_scroll_text_cont2].x,1,get(stagewidth),get(scrolltextwidth));
+    delayedcall(0.01, skin_scrolltext2(););
+    ,
+    set(layer[skin_scroll_text2].scrolled,true);
+    set(layer[skin_scroll_text_cont2].x,get(stagewidth));
+    set(layer[skin_scroll_text_cont2].visible,true);
+    skin_scrolltext2();
+    );
+
+  </action>
+
+
+  <layer align="bottomcenter" keep="true" visible="false"  type="image" name="nav_play" url="../images/skin1/play.png" handcursor="true" x="0" y="10"  onclick="onnavplay()"/>
+  <layer align="bottomcenter" keep="true" visible="false"  type="image" name="nav_return" url="../images/skin1/return.png" handcursor="true" x="-50" y="10"  onclick="onnavreturn()"/>
+  <layer align="bottomcenter" keep="true" visible="false"  type="image" name="nav_stop" url="../images/skin1/stop.png" handcursor="true" x="50" y="10"  onclick="onnavstop()"/>
+  <layer align="bottomcenter" keep="true" visible="false"  type="image" name="nav_continue" url="../images/skin1/continue.png" handcursor="true" x="50" y="10"  onclick="onnavcontinue()"/>
+
+
+  <action name="initnavplay">
+
+   
+    if(device.mobile,
+     
+        set(layer[nav_play].y,85);
+        set(layer[nav_return].y,85);
+        set(layer[nav_stop].y,85);
+        set(layer[nav_continue].y,85);
+    
+    );
+  </action>
+
+  <action name="onnavplay">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,true);
+    set(layer[nav_continue].visible,false);
+    js(navplay());
+  </action>
+  
+  <!--<action name="looknavnext">
+    js(lookcallback());
+  </action>-->
+
+  <action name="onnavstop">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_continue].visible,true);
+
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,false);
+
+    js(setnvastate('false'));
+
+  </action>
+
+  <action name="onnavreturn">
+  stoplookto();
+    set(layer[nav_play].visible,true);
+    set(layer[nav_continue].visible,false);
+    set(layer[nav_return].visible,false);
+    set(layer[nav_stop].visible,false);
+    js(setnvastate('false'));
+
+  </action>
+  <action name="onnavcontinue">
+
+    set(layer[nav_play].visible,false);
+    set(layer[nav_continue].visible,false);
+    set(layer[nav_return].visible,true);
+    set(layer[nav_stop].visible,true);
+    js(setnvastate('true'));
+  </action>
+
+  <layer name="tour_guide_alert" url="" keep="true" align="center" edge="center" x="0" y="0" maxwidth="1000" maxheight="600" enabled="false" visible="false"/>
+
+
+
+  <action name="show_tour_guide_alert">
+
+    set(layer[tour_guide_alert].url,%1);
+    set(layer[tour_guide_alert].visible,true);
+    set(layer[tour_guide_alert].alpha,1);
+    delayedcall(3, tween(layer[tour_guide_alert].alpha,0,1));
+
+  </action>
+</krpano>

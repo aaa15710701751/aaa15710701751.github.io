@@ -1,0 +1,124 @@
+<krpano>
+
+  
+  <plugin name="sdloadingtext1" url="../plugins/textfield.swf" keep="true" zorder="100" visible="false" enabled="false"
+		preload="true"
+		align="center"
+		autoheight="true"
+		width="100"
+		background="false"
+		html="[p]Loading...[/p]"
+		css="p {color:#000; font-family:arial; font-size:16px }"
+	/>
+	
+	<!--<layer name="gallerynext3" url="../plugins/gallerybtns.png" keep="true" visible="false"
+		align="center" x="50" y="160" zorder="100"
+		crop="100|0|100|100"
+		onovercrop="100|100|100|100"
+		ondowncrop="100|100|100|100"
+		ondown="dorotate1();"
+		direction="-1"
+	/>
+	
+	<layer name="galleryprev3" url="../plugins/gallerybtns.png" keep="true"  visible="false"
+		align="center" x="-50" y="160" zorder="100"
+		crop="0|0|100|100"
+		onovercrop="0|100|100|100"
+		ondowncrop="0|100|100|100"
+		ondown="dorotate1();"
+		direction="1"
+	/>-->
+
+  <layer name="plug3dbg3" keep="true" type="container" bgcolor="0x000000" bgalpha="0.6" width="400" height="400" align="center" x="320" y="0" visible="false" zorder="99" bgcapture="false" onclick="">
+
+    <layer keep="true" name="obj_close3" visible="false" url="../plugins/gallerybtns.png" align="righttop" zorder="100" x="-20" y="-20" background="false" crop="200|0|100|100" onclick="obj_close3()"></layer>
+    
+    <plugin name="sdtitletxt3" url="../plugins/textfield.swf" keep="true" zorder="100" visible="false" enabled="false"
+   align="topcenter"
+   y="20"
+   autoheight="true"
+   width="400"
+   background="false"
+   html="[p]3d环物[/p]"
+   css="p {color:#ffffff; font-family:arial; font-size:24px;text-align:center; }"
+	/> 
+
+    <plugin name="sdcontenttxt3" url="../plugins/textfield.swf" keep="true" zorder="100" visible="false" enabled="false"
+  align="topleft"
+  y="60"
+  autoheight="true"
+  width="400"
+  background="false"
+  html="[p]介绍产品信息的内容。……。……。………[/p]"
+  css="p {color:#ffffff; font-family:arial; font-size:14px;text-align:left; }"
+	/>
+
+    <plugin name="sdpricetxt3" url="../plugins/textfield.swf" keep="true" zorder="100" visible="false" enabled="false"
+  align="bottomcenter"
+  y="60"
+  autoheight="true"
+  width="400"
+  background="false"
+  html="[p][/p]"
+  css="p {color:#f66e03; font-family:arial; font-size:18px;text-align:center; }"
+	/>
+
+    <layer name="btnbuy3" url="../images/gwc.png" keep="true" visible="true"
+		align="bottomcenter" x="0" y="10" zorder="100"
+		crop="0|78|224|54"
+    scale="0.7"
+		onovercrop="0|0|224|54"
+		ondowncrop="0|0|224|54"
+		direction="-1"
+	/>
+
+  </layer>
+  
+
+  <layer name="obj_bg3" keep="true" type="container" bgcolor="0x000000" bgalpha="0.0" align="lefttop" x="-25" y="-30" width="100%" height="100%" visible="false" zorder="99" bgcapture="false" onclick="">
+    <layer name="mainpicbox" url="" keep="true" 
+        align="center" zorder="100"
+        width="280"
+        height="280"
+        ondown=""
+        direction="1"
+	/>
+  </layer>
+
+  <action name="showproduct">
+    if(device.mobile,
+
+    set(layer[plug3dbg3].x, 0);
+    set(layer[plug3dbg3].y, 100);
+    set(layer[obj_bg3].x, 0);
+    set(layer[obj_bg3].y, -300);
+    );
+
+    set(layer[plug3dbg3].visible, true);
+    set(layer[obj_bg3].visible, true);
+    set(layer[sdtitletxt3].visible, true);
+    set(layer[obj_close3].visible, true);
+    set(layer[sdpricetxt3].visible, true);
+
+    set(plugin[sdcontenttxt3].visible, true);
+
+  </action>
+  
+  <action name="obj_close3">
+   
+    <!--set(layer[gallerynext3].visible,false);
+    set(layer[galleryprev3].visible,false);-->
+    set(layer[obj_bg3].visible,false);
+    set(layer[sdtitletxt3].visible, false);
+    set(layer[obj_close3].visible, false);
+    set(plugin[sdcontenttxt3].visible, false);
+    set(layer[plug3dbg3].visible, false);
+    set(layer[sdpricetxt3].visible, false);
+    );
+  </action>
+
+  <action name="productchangepic">
+    set(layer[mainpicbox].url, %1);
+  </action>
+	
+</krpano>
