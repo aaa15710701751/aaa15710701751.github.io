@@ -1,8 +1,0 @@
-
-说明：
-
-您可以将文件放到您的服务器上直接浏览
-
-windows 32操作系统，暂不支持
-windows 64操作系统，如需本地浏览请打开html文件夹中的windows64_server.exe
-mac操作系统，如需本地浏览请打开html文件夹中的mac_ios_server
